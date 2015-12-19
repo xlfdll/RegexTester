@@ -1,24 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.30729</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{BDB71A40-E1D9-49FB-87CF-206B83077FEB}</ProjectGuid>
+    <ProjectGuid>{B0AAA9B4-FA9D-4E76-ACC5-F4B17B462A3D}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>RegexTester</RootNamespace>
     <AssemblyName>RegexTester</AssemblyName>
-    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <ApplicationIcon>RegexBlue.ico</ApplicationIcon>
-    <FileUpgradeFlags>
-    </FileUpgradeFlags>
-    <OldToolsVersion>3.5</OldToolsVersion>
-    <UpgradeBackupLocation />
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -26,126 +25,166 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>RegexTester.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Deployment" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\Helpers\DataHelper.cs" />
-    <Compile Include="Classes\Helpers\FieldHelper.cs" />
-    <Compile Include="Classes\Helpers\WorkHelper.cs" />
-    <Compile Include="Classes\RegexInput.cs" />
-    <Compile Include="Classes\SearchStatus.cs" />
-    <Compile Include="Forms\MainForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\OptionForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\OptionForm.Designer.cs">
-      <DependentUpon>OptionForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\PatternForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\PatternForm.Designer.cs">
-      <DependentUpon>PatternForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\ProgressForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\ProgressForm.Designer.cs">
-      <DependentUpon>ProgressForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\ResultForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\ResultForm.Designer.cs">
-      <DependentUpon>ResultForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\TextForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\TextForm.Designer.cs">
-      <DependentUpon>TextForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Classes\Helpers\FormHelper.cs" />
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Forms\MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\OptionForm.resx">
-      <DependentUpon>OptionForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\PatternForm.resx">
-      <DependentUpon>PatternForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ProgressForm.resx">
-      <DependentUpon>ProgressForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ResultForm.resx">
-      <DependentUpon>ResultForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\TextForm.resx">
-      <DependentUpon>TextForm.cs</DependentUpon>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </ApplicationDefinition>
+    <Compile Include="..\..\XDLibrary\Xlfdll.Windows.Presentation\Dialogs\AboutWindow.xaml.cs">
+      <Link>Base\Windows\Presentation\Dialogs\AboutWindow.xaml.cs</Link>
+      <DependentUpon>AboutWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\XDLibrary\Xlfdll.Windows.Presentation\Dialogs\ExceptionMessageBox.cs">
+      <Link>Base\Windows\Presentation\Dialogs\ExceptionMessageBox.cs</Link>
+    </Compile>
+    <Compile Include="..\..\XDLibrary\Xlfdll.Windows.Presentation\Functions\WindowFunctions.cs">
+      <Link>Base\Windows\Presentation\Functions\WindowFunctions.cs</Link>
+    </Compile>
+    <Compile Include="Commands\Handlers\ResultCommandHandlers.cs" />
+    <Compile Include="Commands\ResultCommands.cs" />
+    <Compile Include="Helpers\RegexHelper.cs" />
+    <Compile Include="Helpers\TaskHelper.cs" />
+    <Compile Include="Helpers\ValueHelper.cs" />
+    <Compile Include="Windows\TaskWindow.xaml.cs">
+      <DependentUpon>TaskWindow.xaml</DependentUpon>
+    </Compile>
+    <Page Include="..\..\XDLibrary\Xlfdll.Windows.Presentation\Dialogs\AboutWindow.xaml">
+      <Link>Base\Windows\Presentation\Dialogs\AboutWindow.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </EmbeddedResource>
+    </Page>
+    <Page Include="Windows\EditWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="..\..\XDLibrary\Xlfdll.Core\Configuration\Configuration.cs">
+      <Link>Base\Configuration\Configuration.cs</Link>
+    </Compile>
+    <Compile Include="..\..\XDLibrary\Xlfdll.Core\Configuration\ConfigurationSection.cs">
+      <Link>Base\Configuration\ConfigurationSection.cs</Link>
+    </Compile>
+    <Compile Include="..\..\XDLibrary\Xlfdll.Core\Diagnostics\AssemblyMetadata.cs">
+      <Link>Base\Diagnostics\AssemblyMetadata.cs</Link>
+    </Compile>
+    <Compile Include="..\..\XDLibrary\Xlfdll.Core\Infrastructure\ObservableObject.cs">
+      <Link>Base\ObservableObject.cs</Link>
+    </Compile>
+    <Compile Include="..\..\XDLibrary\Xlfdll.Windows\API\WindowClass.cs">
+      <Link>Base\Windows\API\WindowClass.cs</Link>
+    </Compile>
+    <Compile Include="..\..\XDLibrary\Xlfdll.Windows\API\WindowStyles.cs">
+      <Link>Base\Windows\API\WindowStyles.cs</Link>
+    </Compile>
+    <Compile Include="..\..\XDLibrary\Xlfdll.Windows\Configuration\RegistryConfigurationProcessor.cs">
+      <Link>Base\Configuration\Windows\RegistryConfigurationProcessor.cs</Link>
+    </Compile>
+    <Compile Include="Commands\Handlers\GeneralCommandHandlers.cs" />
+    <Compile Include="Commands\Handlers\RegexCommandHandlers.cs" />
+    <Compile Include="Commands\Handlers\JobCommandHandlers.cs" />
+    <Compile Include="Commands\GeneralCommands.cs" />
+    <Compile Include="Commands\RegexCommands.cs" />
+    <Compile Include="Commands\JobCommands.cs" />
+    <Compile Include="Data\Configuration\ConfigurationData.History.cs" />
+    <Compile Include="Data\Configuration\ConfigurationData.Main.cs" />
+    <Compile Include="Data\Configuration\ConfigurationData.UI.cs" />
+    <Compile Include="Data\RegexInput.cs" />
+    <Compile Include="Data\RegexMatch.cs" />
+    <Compile Include="Data\RegexResult.cs" />
+    <Compile Include="Data\RegexStatus.cs" />
+    <Compile Include="Helpers\ApplicationHelper.cs" />
+    <Compile Include="Helpers\DialogHelper.cs" />
+    <Compile Include="Helpers\ConfigurationHelper.cs" />
+    <Compile Include="Helpers\Converters\RegexOptionsConverter.cs" />
+    <Compile Include="Helpers\FileHelper.cs" />
+    <Compile Include="Helpers\JobHelper.cs" />
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Windows\EditWindow.xaml.cs">
+      <DependentUpon>EditWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Resources\Icons.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\TaskWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.manifest">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="RegexBlue.ico" />
-    <None Include="Resources\WordWarp.png" />
-    <None Include="Resources\Pen.png" />
-    <None Include="Resources\Edit.png" />
-    <None Include="Resources\Export.png" />
-    <None Include="Resources\Import.png" />
-    <None Include="Resources\Style.png" />
-    <None Include="Resources\Regex.png" />
-    <None Include="Resources\Select.png" />
-    <None Include="Resources\Undo.png" />
-    <None Include="Resources\Redo.png" />
-    <None Include="Resources\Paste.png" />
-    <None Include="Resources\Open.png" />
-    <None Include="Resources\Delete.png" />
-    <None Include="Resources\Cut.png" />
-    <None Include="Resources\Copy.png" />
+    <Resource Include="RegexTester.ico" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Images\RegexTester.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

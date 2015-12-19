@@ -1,7 +1,9 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RegexTester", "RegexTester\RegexTester.csproj", "{BDB71A40-E1D9-49FB-87CF-206B83077FEB}"
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RegexTester", "RegexTester\RegexTester.csproj", "{B0AAA9B4-FA9D-4E76-ACC5-F4B17B462A3D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{BDB71A40-E1D9-49FB-87CF-206B83077FEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BDB71A40-E1D9-49FB-87CF-206B83077FEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BDB71A40-E1D9-49FB-87CF-206B83077FEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BDB71A40-E1D9-49FB-87CF-206B83077FEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0AAA9B4-FA9D-4E76-ACC5-F4B17B462A3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0AAA9B4-FA9D-4E76-ACC5-F4B17B462A3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0AAA9B4-FA9D-4E76-ACC5-F4B17B462A3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0AAA9B4-FA9D-4E76-ACC5-F4B17B462A3D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -46,7 +46,7 @@
     
     mimetype: application/x-microsoft.net.object.binary.base64
     value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : System.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
     
     mimetype: application/x-microsoft.net.object.soap.base64
@@ -60,7 +60,6 @@
             : and then encoded with base64 encoding.
     -->
   <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
@@ -69,10 +68,9 @@
               <xsd:sequence>
                 <xsd:element name="value" type="xsd:string" minOccurs="0" />
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
               <xsd:attribute name="type" type="xsd:string" />
               <xsd:attribute name="mimetype" type="xsd:string" />
-              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
@@ -87,10 +85,9 @@
                 <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
                 <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
               <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
               <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
@@ -117,173 +114,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ResultFormDefaultTitle" xml:space="preserve">
-    <value>Result</value>
-  </data>
-  <data name="DoBackgroundWorkProgressTextFormat" xml:space="preserve">
-    <value>Operation "{0}" Working...</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Redo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Redo.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="TextFormTitleFormat" xml:space="preserve">
-    <value>{0} - Text</value>
-  </data>
-  <data name="DefaultUntitledString" xml:space="preserve">
-    <value>Untitled</value>
-  </data>
-  <data name="PatternEditDialogTitleFormat" xml:space="preserve">
-    <value>Edit {0}</value>
-  </data>
-  <data name="TextDocumentFileDialogFilter" xml:space="preserve">
-    <value>Text Document (*.txt)|*.txt|All Files (*.*)|*.*</value>
-  </data>
-  <data name="DoResultBackgroundWorkProgressTextFormat" xml:space="preserve">
-    <value>Adding Result Nodes...{0}%</value>
-  </data>
-  <data name="Undo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Undo.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Copy" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Copy.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Cut" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Cut.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ExceptionMessageBoxInnerExceptionOccuredText" xml:space="preserve">
-    <value>InnerException:</value>
-  </data>
-  <data name="ExceptionMessageBoxTextFormat" xml:space="preserve">
-    <value>{1}{0}{3}{0}{2}{0}{3}</value>
-  </data>
-  <data name="ReportPatternTitle" xml:space="preserve">
-    <value>Regular Expression</value>
-  </data>
-  <data name="RegexPatternEditTag" xml:space="preserve">
-    <value>Regular Expression Pattern</value>
-  </data>
-  <data name="ReportBuiltTimeStringFormat" xml:space="preserve">
-    <value>Built on {0}</value>
-  </data>
-  <data name="Edit" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Edit.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ReportMatchTimeStringFormat" xml:space="preserve">
-    <value>Matched on {0}</value>
-  </data>
-  <data name="ExceptionMessageBoxExceptionOccuredText" xml:space="preserve">
-    <value>An exception occurred.</value>
-  </data>
-  <data name="Delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Delete.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="StopwatchHighResolutionCounterText" xml:space="preserve">
-    <value>High-Resolution Performance Counter</value>
-  </data>
-  <data name="ResultFormTitleFormat" xml:space="preserve">
-    <value>Result - Count: {0} | Time: {1}</value>
-  </data>
-  <data name="Paste" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Paste.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Style" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Style.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Export" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Export.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Select" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Select.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="TickInfoMessageBoxTitleFormat" xml:space="preserve">
-    <value>Average Time: {0} ticks ({1} ns)</value>
-  </data>
-  <data name="RegexPatternEmptyExceptionMessageFormat" xml:space="preserve">
-    <value>The following patterns cannot be empty:{0}Regular Expression Pattern</value>
-  </data>
-  <data name="ResultNodeTextFormat" xml:space="preserve">
-    <value>"{0}" at index {1}</value>
-  </data>
-  <data name="Regex" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Regex.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="StopwatchSystemTimerText" xml:space="preserve">
-    <value>System Timer (System.DateTime)</value>
-  </data>
-  <data name="TickButtonTextFormat" xml:space="preserve">
-    <value>&amp;Time: {0} ns</value>
-  </data>
-  <data name="ExceptionMessageBoxStructureFormat" xml:space="preserve">
-    <value>{1}{0}{0}{2}</value>
-  </data>
-  <data name="ReportTextTitle" xml:space="preserve">
-    <value>Text</value>
-  </data>
-  <data name="DefaultSeparator" xml:space="preserve">
-    <value>=================================</value>
-  </data>
-  <data name="ReportVersionStringFormat" xml:space="preserve">
-    <value>Version {0}</value>
-  </data>
-  <data name="ReplacePatternEditTag" xml:space="preserve">
-    <value>Replacement Pattern</value>
-  </data>
-  <data name="ReportOptionsTitle" xml:space="preserve">
-    <value>RegexOptions</value>
-  </data>
-  <data name="Open" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Open.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ReportResultTitleFormat" xml:space="preserve">
-    <value>Result (Count: {0})</value>
-  </data>
-  <data name="Import" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Import.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="TickInfoMessageBoxTextFormat" xml:space="preserve">
-    <value>The amount of time for Regular Expression pattern {1}{1} "{0}" {1}{1} = {2} ticks ({3} ns) {1}{1} {4} {1} Baseline Parameters: {1}{1} Method: System.Diagnostics.Stopwatch {1} Frequency: {5} ticks / second ({6} ns / tick) {1} Based on {7}{1}{4}</value>
-  </data>
-  <data name="WordWarp" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\WordWarp.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ResultRemovedToolTipText" xml:space="preserve">
-    <value>To keep consistency, old results have been removed.</value>
-  </data>
-  <data name="ResultRemovedToolTipTitle" xml:space="preserve">
-    <value>Old results has been removed</value>
-  </data>
-  <data name="ReportExportFileDialogTitle" xml:space="preserve">
-    <value>Export to Report</value>
-  </data>
-  <data name="ReportFileDialogFilter" xml:space="preserve">
-    <value>RegexTester Log (*.log)|*.log|Text Document (*.txt)|*.txt|All Files (*.*)|*.*</value>
-  </data>
-  <data name="ReportFileNameFormat" xml:space="preserve">
-    <value>RegexTester_Report_{0}</value>
-  </data>
-  <data name="ReportTickTextFormat" xml:space="preserve">
-    <value>{0} ticks ({1} ns)</value>
-  </data>
-  <data name="ReportNoResultText" xml:space="preserve">
-    <value>No Result</value>
-  </data>
-  <data name="RunningTimeMeasurementOperationText" xml:space="preserve">
-    <value>Running Time Measurement</value>
-  </data>
-  <data name="ReportImportFileDialogTitle" xml:space="preserve">
-    <value>Import from Report</value>
-  </data>
-  <data name="ReportOpenFileDialogFirstFilter" xml:space="preserve">
-    <value>RegexTester Report (*.log, *.txt)|*.log;*.txt</value>
-  </data>
-  <data name="DoClearNodeBackgroundWorkProgressText" xml:space="preserve">
-    <value>Clearing Result Nodes...</value>
-  </data>
-  <data name="DoExportBackgroundWorkProgressTextFormat" xml:space="preserve">
-    <value>Exporting Report...{0}%</value>
-  </data>
-  <data name="DoImportBackgroundWorkProgressTextFormat" xml:space="preserve">
-    <value>Importing Report...{0}%</value>
-  </data>
 </root>
