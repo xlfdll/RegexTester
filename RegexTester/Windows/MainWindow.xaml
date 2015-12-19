@@ -15,6 +15,7 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="pack://application:,,,/Resources/Icons.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/Resources/Styles.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
@@ -27,6 +28,9 @@
             <RowDefinition Name="ResultRowDefinition" Height="Auto"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
+        <Grid.Resources>
+            <Style TargetType="Button" BasedOn="{StaticResource ModernButtonStyle}"/>
+        </Grid.Resources>
 
         <ToolBar Grid.Row="0" ToolBarTray.IsLocked="True">
             <ToolBar.Resources>
