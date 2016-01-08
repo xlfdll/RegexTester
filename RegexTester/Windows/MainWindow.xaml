@@ -12,12 +12,7 @@
         Loaded="MainWindow_Loaded" Closing="MainWindow_Closing">
 
     <Window.Resources>
-        <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="pack://application:,,,/Resources/Icons.xaml"/>
-                <ResourceDictionary Source="pack://application:,,,/Resources/Styles.xaml"/>
-            </ResourceDictionary.MergedDictionaries>
-        </ResourceDictionary>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
     </Window.Resources>
 
     <Grid>
@@ -28,9 +23,6 @@
             <RowDefinition Name="ResultRowDefinition" Height="Auto"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <Grid.Resources>
-            <Style TargetType="Button" BasedOn="{StaticResource ModernButtonStyle}"/>
-        </Grid.Resources>
 
         <ToolBar Grid.Row="0" ToolBarTray.IsLocked="True">
             <ToolBar.Resources>
@@ -116,6 +108,9 @@
                 <ColumnDefinition/>
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
+            <Grid.Resources>
+                <Style TargetType="Button" BasedOn="{StaticResource ModernButtonStyle}"/>
+            </Grid.Resources>
 
             <GroupBox Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Header="Regular Expression">
                 <Grid>
@@ -230,7 +225,7 @@
                 </Style>
             </GridSplitter.Style>
         </GridSplitter>
-        
+
         <Expander Name="ResultExpander" Grid.Row="3" Header="Result" FocusManager.IsFocusScope="True"
                   IsExpanded="{Binding Path=Result.IsAvailable, Mode=OneWay}"
                   Expanded="ResultExpander_Expanded" Collapsed="ResultExpander_Collapsed">
@@ -255,7 +250,7 @@
                 </TreeView.Resources>
             </TreeView>
         </Expander>
-        
+
         <StatusBar Grid.Row="4" Background="White" DataContext="{Binding Path=Result}">
             <StatusBar.Resources>
                 <Style TargetType="TextBlock">
