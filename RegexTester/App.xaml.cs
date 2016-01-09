@@ -1,6 +1,5 @@
 ﻿using System.Windows;
 
-using RegexTester.Data.Configuration;
 using RegexTester.Helpers;
 
 namespace RegexTester
