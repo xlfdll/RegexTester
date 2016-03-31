@@ -33,7 +33,7 @@ namespace RegexTester.Data
             {
                 _regexPattern = value;
 
-                OnPropertyChanged("RegexPattern");
+                OnPropertyChanged(nameof(this.RegexPattern));
             }
         }
         public String ReplacePattern
@@ -46,7 +46,7 @@ namespace RegexTester.Data
             {
                 _replacePattern = value;
 
-                OnPropertyChanged("ReplacePattern");
+                OnPropertyChanged(nameof(this.ReplacePattern));
             }
         }
         public String Text
@@ -59,7 +59,7 @@ namespace RegexTester.Data
             {
                 _text = value;
 
-                OnPropertyChanged("Text");
+                OnPropertyChanged(nameof(this.Text));
             }
         }
         public RegexOptions Options
@@ -72,7 +72,7 @@ namespace RegexTester.Data
             {
                 _options = value;
 
-                OnPropertyChanged("Options");
+                OnPropertyChanged(nameof(this.Options));
             }
         }
 

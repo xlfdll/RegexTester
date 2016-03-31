@@ -10,14 +10,14 @@ namespace RegexTester.Data
     {
         public RegexResult()
         {
-            this.IsAvailable = false;
             this.Results = new ObservableCollection<RegexMatch>();
+            this.IsAvailable = false;
             this.DurationTicks = 0;
             this.TimeStamp = DateTime.MinValue;
         }
 
+        public ObservableCollection<RegexMatch> Results { get; }
         public Boolean IsAvailable { get; private set; }
-        public ObservableCollection<RegexMatch> Results { get; private set; }
         public Int64 DurationTicks { get; private set; }
         public DateTime TimeStamp { get; private set; }
 

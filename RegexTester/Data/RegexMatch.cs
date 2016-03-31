@@ -12,8 +12,8 @@ namespace RegexTester.Data
             this.Children = new ObservableCollection<RegexMatch>();
         }
 
-        public String Value { get; private set; }
-        public Int32 Index { get; private set; }
-        public ObservableCollection<RegexMatch> Children { get; private set; }
+        public String Value { get; }
+        public Int32 Index { get; }
+        public ObservableCollection<RegexMatch> Children { get; }
     }
 }

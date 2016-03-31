@@ -13,8 +13,8 @@ namespace RegexTester.Helpers
             ConfigurationHelper.Current = ConfigurationHelper.Processor.LoadConfiguration();
         }
 
-        public static Configuration Current { get; private set; }
-        private static RegistryConfigurationProcessor Processor { get; set; }
+        public static Configuration Current { get; }
+        private static RegistryConfigurationProcessor Processor { get; }
 
         public static void Save()
         {

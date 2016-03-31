@@ -33,7 +33,7 @@ namespace RegexTester.Data
             {
                 _input = value;
 
-                OnPropertyChanged("Input");
+                OnPropertyChanged(nameof(this.Input));
             }
         }
         public RegexResult Result
@@ -46,7 +46,7 @@ namespace RegexTester.Data
             {
                 _result = value;
 
-                OnPropertyChanged("Result");
+                OnPropertyChanged(nameof(this.Result));
             }
         }
 

@@ -14,7 +14,7 @@ namespace RegexTester.Helpers
             ApplicationHelper.Metadata = new AssemblyMetadata(Assembly.GetExecutingAssembly());
         }
 
-        public static AssemblyMetadata Metadata { get; private set; }
+        public static AssemblyMetadata Metadata { get; }
         public static MainWindow MainWindow
         {
             get { return Application.Current.MainWindow as MainWindow; }
