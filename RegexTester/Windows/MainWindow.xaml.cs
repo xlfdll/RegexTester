@@ -57,7 +57,7 @@ namespace RegexTester.Windows
 
             // ResultTreeView
 
-            this.ResultTreeView.CommandBindings.Add(new CommandBinding(ResultCommands.CopyValueCommand,
+            ResultTreeView.CommandBindings.Add(new CommandBinding(ResultCommands.CopyValueCommand,
                 ResultCommandHandlers.CopyValueCommand_Executed, ResultCommandHandlers.CopyValueCommand_CanExecute));
 
             #endregion
@@ -141,32 +141,32 @@ namespace RegexTester.Windows
 
         private void ResultGridSplitter_DragCompleted(object sender, DragCompletedEventArgs e)
         {
-            ConfigurationData.UI.ResultRowHeight = this.ResultRowDefinition.Height;
+            ConfigurationData.UI.ResultRowHeight = ResultRowDefinition.Height;
         }
 
         private void ResultExpander_Expanded(object sender, RoutedEventArgs e)
         {
-            this.ResultRowDefinition.Height = ConfigurationData.UI.ResultRowHeight;
+            ResultRowDefinition.Height = ConfigurationData.UI.ResultRowHeight;
         }
 
         private void ResultExpander_Collapsed(object sender, RoutedEventArgs e)
         {
-            this.ResultRowDefinition.Height = GridLength.Auto;
+            ResultRowDefinition.Height = GridLength.Auto;
         }
 
         private void ResultTreeView_SelectedItemChanged(object sender, RoutedPropertyChangedEventArgs<Object> e)
         {
-            RegexMatch regexMatch = this.ResultTreeView.SelectedItem as RegexMatch;
+            RegexMatch regexMatch = ResultTreeView.SelectedItem as RegexMatch;
 
             if (regexMatch != null)
             {
                 // A fix to simulate TextBox.HideSelection in Windows Forms
                 // Set FocusManager.IsFocusScope = true on TreeView
                 // Then, the following Keyboard.Focus() statements can set logical focus on TextBox
-                Keyboard.Focus(this.ContentTextBox);
-                Keyboard.Focus(this.ResultTreeView);
+                Keyboard.Focus(ContentTextBox);
+                Keyboard.Focus(ResultTreeView);
 
-                this.ContentTextBox.Select(regexMatch.Index, regexMatch.Value.Length);
+                ContentTextBox.Select(regexMatch.Index, regexMatch.Value.Length);
             }
         }
     }

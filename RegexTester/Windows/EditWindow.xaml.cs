@@ -21,12 +21,12 @@ namespace RegexTester.Windows
         {
             WindowFunctions.DisableMinimizeBox(this);
 
-            this.PatternTextBox.DataContext = RegexStatus.Current.Input;
+            PatternTextBox.DataContext = RegexStatus.Current.Input;
         }
 
         private void OKButton_Click(object sender, RoutedEventArgs e)
         {
-            this.PatternTextBox.GetBindingExpression(TextBox.TextProperty).UpdateSource();
+            PatternTextBox.GetBindingExpression(TextBox.TextProperty).UpdateSource();
 
             this.Close();
         }
