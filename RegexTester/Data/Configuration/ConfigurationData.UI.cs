@@ -10,18 +10,18 @@ namespace RegexTester.Data.Configuration
         {
             static UI()
             {
-                ConfigurationHelper.AddValue("UI", "ResultRowHeight", "Auto");
+                ApplicationHelper.Settings.Current.TryAddValue("UI", "ResultRowHeight", "Auto");
             }
 
             public static GridLength ResultRowHeight
             {
                 get
                 {
-                    return (GridLength)gridLengthConverter.ConvertFromInvariantString(ConfigurationHelper.Current["UI"]["ResultRowHeight"]);
+                    return (GridLength)gridLengthConverter.ConvertFromInvariantString(ApplicationHelper.Settings.Current["UI"]["ResultRowHeight"]);
                 }
                 set
                 {
-                    ConfigurationHelper.Current["UI"]["ResultRowHeight"] = value.ToString();
+                    ApplicationHelper.Settings.Current["UI"]["ResultRowHeight"] = value.ToString();
                 }
             }
 

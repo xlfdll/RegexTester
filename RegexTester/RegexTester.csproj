@@ -62,6 +62,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="..\..\XDLibrary\Xlfdll.Core\Configuration\ApplicationConfiguration.cs">
+      <Link>Base\Configuration\ApplicationConfiguration.cs</Link>
+    </Compile>
+    <Compile Include="..\..\XDLibrary\Xlfdll.Core\Configuration\IConfigurationProcessor.cs">
+      <Link>Base\Configuration\IConfigurationProcessor.cs</Link>
+    </Compile>
     <Compile Include="..\..\XDLibrary\Xlfdll.Windows.Presentation\Dialogs\AboutWindow.xaml.cs">
       <Link>Base\Windows\Presentation\Dialogs\AboutWindow.xaml.cs</Link>
       <DependentUpon>AboutWindow.xaml</DependentUpon>
@@ -133,7 +139,6 @@
     <Compile Include="Data\RegexStatus.cs" />
     <Compile Include="Helpers\ApplicationHelper.cs" />
     <Compile Include="Helpers\DialogHelper.cs" />
-    <Compile Include="Helpers\ConfigurationHelper.cs" />
     <Compile Include="Helpers\Converters\RegexOptionsConverter.cs" />
     <Compile Include="Helpers\FileHelper.cs" />
     <Compile Include="Helpers\JobHelper.cs" />

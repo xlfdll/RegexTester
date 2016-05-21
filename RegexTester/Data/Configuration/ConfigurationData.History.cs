@@ -12,22 +12,22 @@ namespace RegexTester.Data.Configuration
         {
             static History()
             {
-                ConfigurationHelper.AddValue("History", "RecentRegexPatternCount", "10");
-                ConfigurationHelper.AddValue("History", "RecentReplacePatternCount", "10");
+                ApplicationHelper.Settings.Current.TryAddValue("History", "RecentRegexPatternCount", "10");
+                ApplicationHelper.Settings.Current.TryAddValue("History", "RecentReplacePatternCount", "10");
 
                 ConfigurationData.History.RecentRegexPatterns = new List<String>();
                 ConfigurationData.History.RecentReplacePatterns = new List<String>();
 
                 for (Int32 i = 0; i < ConfigurationData.History.RecentRegexPatternCount; i++)
                 {
-                    ConfigurationHelper.AddValue("History", "RecentRegexPattern" + (i + 1).ToString(), String.Empty);
-                    ConfigurationData.History.RecentRegexPatterns.Add(ConfigurationHelper.Current["History"]["RecentRegexPattern" + (i + 1).ToString()]);
+                    ApplicationHelper.Settings.Current.TryAddValue("History", "RecentRegexPattern" + (i + 1).ToString(), String.Empty);
+                    ConfigurationData.History.RecentRegexPatterns.Add(ApplicationHelper.Settings.Current["History"]["RecentRegexPattern" + (i + 1).ToString()]);
                 }
 
                 for (Int32 i = 0; i < ConfigurationData.History.RecentReplacePatternCount; i++)
                 {
-                    ConfigurationHelper.AddValue("History", "RecentReplacePattern" + (i + 1).ToString(), String.Empty);
-                    ConfigurationData.History.RecentReplacePatterns.Add(ConfigurationHelper.Current["History"]["RecentReplacePattern" + (i + 1).ToString()]);
+                    ApplicationHelper.Settings.Current.TryAddValue("History", "RecentReplacePattern" + (i + 1).ToString(), String.Empty);
+                    ConfigurationData.History.RecentReplacePatterns.Add(ApplicationHelper.Settings.Current["History"]["RecentReplacePattern" + (i + 1).ToString()]);
                 }
             }
 
@@ -35,22 +35,22 @@ namespace RegexTester.Data.Configuration
             {
                 get
                 {
-                    return Convert.ToInt32(ConfigurationHelper.Current["History"]["RecentRegexPatternCount"]);
+                    return Convert.ToInt32(ApplicationHelper.Settings.Current["History"]["RecentRegexPatternCount"]);
                 }
                 set
                 {
-                    ConfigurationHelper.Current["History"]["RecentRegexPatternCount"] = value.ToString();
+                    ApplicationHelper.Settings.Current["History"]["RecentRegexPatternCount"] = value.ToString();
                 }
             }
             public static Int32 RecentReplacePatternCount
             {
                 get
                 {
-                    return Convert.ToInt32(ConfigurationHelper.Current["History"]["RecentReplacePatternCount"]);
+                    return Convert.ToInt32(ApplicationHelper.Settings.Current["History"]["RecentReplacePatternCount"]);
                 }
                 set
                 {
-                    ConfigurationHelper.Current["History"]["RecentReplacePatternCount"] = value.ToString();
+                    ApplicationHelper.Settings.Current["History"]["RecentReplacePatternCount"] = value.ToString();
                 }
             }
 
@@ -75,7 +75,7 @@ namespace RegexTester.Data.Configuration
 
                 for (Int32 i = 0; i < ConfigurationData.History.RecentRegexPatternCount; i++)
                 {
-                    ConfigurationHelper.Current["History"]["RecentRegexPattern" + (i + 1).ToString()] = ConfigurationData.History.RecentRegexPatterns[i];
+                    ApplicationHelper.Settings.Current["History"]["RecentRegexPattern" + (i + 1).ToString()] = ConfigurationData.History.RecentRegexPatterns[i];
                 }
             }
             public static void AddRecentReplacePattern(String item)
@@ -96,7 +96,7 @@ namespace RegexTester.Data.Configuration
 
                 for (Int32 i = 0; i < ConfigurationData.History.RecentReplacePatternCount; i++)
                 {
-                    ConfigurationHelper.Current["History"]["RecentReplacePattern" + (i + 1).ToString()] = ConfigurationData.History.RecentReplacePatterns[i];
+                    ApplicationHelper.Settings.Current["History"]["RecentReplacePattern" + (i + 1).ToString()] = ConfigurationData.History.RecentReplacePatterns[i];
                 }
             }
         }

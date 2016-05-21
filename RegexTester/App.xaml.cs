@@ -11,7 +11,7 @@ namespace RegexTester
     {
         private void Application_Exit(object sender, ExitEventArgs e)
         {
-            ConfigurationHelper.Save();
+            ApplicationHelper.Settings.Save();
         }
     }
 }

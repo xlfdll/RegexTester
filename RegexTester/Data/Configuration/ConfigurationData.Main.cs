@@ -11,18 +11,18 @@ namespace RegexTester.Data.Configuration
         {
             static Main()
             {
-                ConfigurationHelper.AddValue("Main", "RegexOperationTimeout", Regex.InfiniteMatchTimeout.ToString());
+                ApplicationHelper.Settings.Current.TryAddValue("Main", "RegexOperationTimeout", Regex.InfiniteMatchTimeout.ToString());
             }
 
             public static TimeSpan RegexOperationTimeout
             {
                 get
                 {
-                    return TimeSpan.Parse(ConfigurationHelper.Current["Main"]["RegexOperationTimeout"]);
+                    return TimeSpan.Parse(ApplicationHelper.Settings.Current["Main"]["RegexOperationTimeout"]);
                 }
                 set
                 {
-                    ConfigurationHelper.Current["Main"]["RegexOperationTimeout"] = value.ToString();
+                    ApplicationHelper.Settings.Current["Main"]["RegexOperationTimeout"] = value.ToString();
                 }
             }
         }
