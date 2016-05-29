@@ -26,13 +26,11 @@
 
         <ToolBar Grid.Row="0" ToolBarTray.IsLocked="True">
             <ToolBar.Resources>
-                <Style TargetType="StackPanel">
-                    <Setter Property="Orientation" Value="Horizontal"/>
-                </Style>
-                <Style TargetType="AccessText">
-                    <Setter Property="VerticalAlignment" Value="Center"/>
-                    <Setter Property="Margin" Value="3"/>
-                </Style>
+                <ResourceDictionary>
+                    <ResourceDictionary.MergedDictionaries>
+                        <ResourceDictionary Source="pack://application:,,,/Resources/Styles.Toolbar.xaml"/>
+                    </ResourceDictionary.MergedDictionaries>
+                </ResourceDictionary>
             </ToolBar.Resources>
 
             <Separator/>
@@ -253,9 +251,11 @@
 
         <StatusBar Grid.Row="4" Background="White" DataContext="{Binding Path=Result}">
             <StatusBar.Resources>
-                <Style TargetType="TextBlock">
-                    <Setter Property="Margin" Value="5,0,5,0"/>
-                </Style>
+                <ResourceDictionary>
+                    <ResourceDictionary.MergedDictionaries>
+                        <ResourceDictionary Source="pack://application:,,,/Resources/Styles.StatusBar.xaml"/>
+                    </ResourceDictionary.MergedDictionaries>
+                </ResourceDictionary>
             </StatusBar.Resources>
             <StatusBar.ItemsPanel>
                 <ItemsPanelTemplate>
