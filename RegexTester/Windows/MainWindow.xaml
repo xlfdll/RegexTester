@@ -4,7 +4,6 @@
         xmlns:data="clr-namespace:RegexTester.Data"
         xmlns:config="clr-namespace:RegexTester.Data.Configuration"
         xmlns:command="clr-namespace:RegexTester.Commands"
-        xmlns:handler="clr-namespace:RegexTester.Commands.Handlers"
         xmlns:converter="clr-namespace:RegexTester.Helpers.Converters"
         Title=".NET Regular Expression Tester" Icon="pack://application:,,,/RegexTester.ico"
         Width="1280" Height="720" MinWidth="800" MinHeight="600" WindowStartupLocation="CenterScreen"
@@ -14,6 +13,18 @@
     <Window.Resources>
         <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
     </Window.Resources>
+
+    <Window.InputBindings>
+        <KeyBinding Gesture="Ctrl+N" Command="{x:Static command:JobCommands.NewCommand}"/>
+        <KeyBinding Gesture="Ctrl+O" Command="{x:Static command:JobCommands.OpenCommand}"/>
+        <KeyBinding Gesture="Ctrl+S" Command="{x:Static command:JobCommands.SaveCommand}"/>
+        <KeyBinding Gesture="Ctrl+Shift+S" Command="{x:Static command:JobCommands.SaveAsCommand}"/>
+
+        <KeyBinding Gesture="Ctrl+M" Command="{x:Static command:RegexCommands.MatchCommand}"/>
+        <KeyBinding Gesture="Ctrl+L" Command="{x:Static command:RegexCommands.SplitCommand}"/>
+        <KeyBinding Gesture="Ctrl+P" Command="{x:Static command:RegexCommands.ReplaceCommand}"/>
+        <KeyBinding Gesture="Ctrl+E" Command="{x:Static command:RegexCommands.MeasureCommand}"/>
+    </Window.InputBindings>
 
     <Grid>
         <Grid.RowDefinitions>
@@ -55,7 +66,7 @@
             <Button Command="{x:Static command:JobCommands.SaveAsCommand}">
                 <StackPanel>
                     <Image Source="{StaticResource SaveAsIcon}"/>
-                    <AccessText Text="_Save Job As"/>
+                    <AccessText Text="Save Job _As"/>
                 </StackPanel>
             </Button>
             <Separator/>
@@ -95,6 +106,9 @@
         </ToolBar>
 
         <Grid Name="InputGrid" Grid.Row="1">
+            <Grid.Resources>
+                <Style TargetType="Button" BasedOn="{StaticResource ModernButtonStyle}"/>
+            </Grid.Resources>
             <Grid.RowDefinitions>
                 <RowDefinition Height="48"/>
                 <RowDefinition Height="48"/>
@@ -106,9 +120,6 @@
                 <ColumnDefinition/>
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
-            <Grid.Resources>
-                <Style TargetType="Button" BasedOn="{StaticResource ModernButtonStyle}"/>
-            </Grid.Resources>
 
             <GroupBox Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Header="Regular Expression">
                 <Grid>
@@ -229,11 +240,6 @@
                   Expanded="ResultExpander_Expanded" Collapsed="ResultExpander_Collapsed">
             <TreeView Name="ResultTreeView" ItemsSource="{Binding Path=Result.Results}" MinHeight="150"
                       SelectedItemChanged="ResultTreeView_SelectedItemChanged">
-                <TreeView.ContextMenu>
-                    <ContextMenu>
-                        <MenuItem Command="{x:Static command:ResultCommands.CopyValueCommand}"/>
-                    </ContextMenu>
-                </TreeView.ContextMenu>
                 <TreeView.Resources>
                     <HierarchicalDataTemplate DataType="{x:Type data:RegexResult}" ItemsSource="{Binding Path=Results}">
                         <TextBlock>
@@ -246,6 +252,14 @@
                         </TextBlock>
                     </HierarchicalDataTemplate>
                 </TreeView.Resources>
+                <TreeView.ContextMenu>
+                    <!-- ContextMenu has its own Visual Tree. Use PlacementTarget property to work around -->
+                    <ContextMenu DataContext="{Binding Path=PlacementTarget, RelativeSource={RelativeSource Self}}">
+                        <MenuItem Header="_Copy Value"
+                                  Command="{x:Static command:ResultCommands.CopyValueCommand}"
+                                  CommandParameter="{Binding Path=SelectedItem}"/>
+                    </ContextMenu>
+                </TreeView.ContextMenu>
             </TreeView>
         </Expander>
 

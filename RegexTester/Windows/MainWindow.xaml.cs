@@ -6,8 +6,6 @@ using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Input;
 
-using RegexTester.Commands;
-using RegexTester.Commands.Handlers;
 using RegexTester.Data;
 using RegexTester.Data.Configuration;
 using RegexTester.Helpers;
@@ -27,40 +25,6 @@ namespace RegexTester.Windows
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
             this.DataContext = new RegexStatus();
-
-            #region Command Initialization
-
-            // MainWindow
-
-            this.CommandBindings.Add(new CommandBinding(JobCommands.NewCommand,
-                JobCommandHandlers.NewCommand_Executed, GeneralCommandHandlers.AlwaysEnabledCommand_CanExecute));
-            this.CommandBindings.Add(new CommandBinding(JobCommands.OpenCommand,
-                JobCommandHandlers.OpenCommand_Executed, GeneralCommandHandlers.AlwaysEnabledCommand_CanExecute));
-            this.CommandBindings.Add(new CommandBinding(JobCommands.SaveCommand,
-                JobCommandHandlers.SaveCommand_Executed, GeneralCommandHandlers.AlwaysEnabledCommand_CanExecute));
-            this.CommandBindings.Add(new CommandBinding(JobCommands.SaveAsCommand,
-                JobCommandHandlers.SaveAsCommand_Executed, GeneralCommandHandlers.AlwaysEnabledCommand_CanExecute));
-
-            this.CommandBindings.Add(new CommandBinding(RegexCommands.MatchCommand,
-                RegexCommandHandlers.MatchCommand_Executed, RegexCommandHandlers.RegexCommand_CanExecute));
-            this.CommandBindings.Add(new CommandBinding(RegexCommands.SplitCommand,
-                RegexCommandHandlers.SplitCommand_Executed, RegexCommandHandlers.RegexCommand_CanExecute));
-            this.CommandBindings.Add(new CommandBinding(RegexCommands.ReplaceCommand,
-                RegexCommandHandlers.ReplaceCommand_Executed, RegexCommandHandlers.RegexCommand_CanExecute));
-            this.CommandBindings.Add(new CommandBinding(RegexCommands.MeasureCommand,
-                RegexCommandHandlers.MeasureCommand_Executed, RegexCommandHandlers.RegexCommand_CanExecute));
-            this.CommandBindings.Add(new CommandBinding(RegexCommands.EditCommand,
-                RegexCommandHandlers.EditCommand_Executed, GeneralCommandHandlers.AlwaysEnabledCommand_CanExecute));
-
-            this.CommandBindings.Add(new CommandBinding(GeneralCommands.AboutCommand,
-                GeneralCommandHandlers.AboutCommand_Executed, GeneralCommandHandlers.AlwaysEnabledCommand_CanExecute));
-
-            // ResultTreeView
-
-            ResultTreeView.CommandBindings.Add(new CommandBinding(ResultCommands.CopyValueCommand,
-                ResultCommandHandlers.CopyValueCommand_Executed, ResultCommandHandlers.CopyValueCommand_CanExecute));
-
-            #endregion
         }
 
         private void MainWindow_Closing(object sender, CancelEventArgs e)

@@ -64,7 +64,7 @@ namespace RegexTester.Helpers
                 if (messageBoxResult == MessageBoxResult.Yes)
                 {
                     String path = !String.IsNullOrEmpty(RegexStatus.Current.InputFilePath) ?
-                        RegexStatus.Current.InputFilePath : DialogHelper.ShowSaveRegexJobFileDialog(JobCommands.SaveCommand.Name);
+                        RegexStatus.Current.InputFilePath : DialogHelper.ShowSaveRegexJobFileDialog(JobCommands.SaveCommandName);
 
                     if (!String.IsNullOrEmpty(path))
                     {

@@ -1,4 +1,8 @@
-﻿using System.Windows.Input;
+﻿using System.Windows;
+
+using Xlfdll.Windows.Presentation;
+
+using RegexTester.Data;
 
 namespace RegexTester.Commands
 {
@@ -6,10 +10,17 @@ namespace RegexTester.Commands
     {
         static ResultCommands()
         {
-            ResultCommands.CopyValueCommand = new RoutedUICommand("Copy Value", "Copy", typeof(ResultCommands),
-                new InputGestureCollection() { new KeyGesture(Key.C, ModifierKeys.Control, "Ctrl+C") });
+            ResultCommands.CopyValueCommand = new RelayCommand<RegexMatch>(
+                (RegexMatch parameter) =>
+                {
+                    Clipboard.SetText(parameter.Value);
+                },
+                (RegexMatch parameter) =>
+                {
+                    return (parameter != null);
+                });
         }
 
-        public static RoutedUICommand CopyValueCommand { get; private set; }
+        public static RelayCommand<RegexMatch> CopyValueCommand { get; }
     }
 }

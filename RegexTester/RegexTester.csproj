@@ -78,7 +78,9 @@
     <Compile Include="..\..\XDLibrary\Xlfdll.Windows.Presentation\Functions\WindowFunctions.cs">
       <Link>Base\Windows\Presentation\Functions\WindowFunctions.cs</Link>
     </Compile>
-    <Compile Include="Commands\Handlers\ResultCommandHandlers.cs" />
+    <Compile Include="..\..\XDLibrary\Xlfdll.Windows.Presentation\RelayCommand.cs">
+      <Link>Base\Windows\RelayCommand.cs</Link>
+    </Compile>
     <Compile Include="Commands\ResultCommands.cs" />
     <Compile Include="Helpers\RegexHelper.cs" />
     <Compile Include="Helpers\TaskHelper.cs" />
@@ -132,9 +134,6 @@
     <Compile Include="..\..\XDLibrary\Xlfdll.Windows\Configuration\RegistryConfigurationProcessor.cs">
       <Link>Base\Configuration\Windows\RegistryConfigurationProcessor.cs</Link>
     </Compile>
-    <Compile Include="Commands\Handlers\GeneralCommandHandlers.cs" />
-    <Compile Include="Commands\Handlers\RegexCommandHandlers.cs" />
-    <Compile Include="Commands\Handlers\JobCommandHandlers.cs" />
     <Compile Include="Commands\GeneralCommands.cs" />
     <Compile Include="Commands\RegexCommands.cs" />
     <Compile Include="Commands\JobCommands.cs" />

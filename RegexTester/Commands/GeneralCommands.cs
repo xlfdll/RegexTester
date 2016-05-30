@@ -1,4 +1,10 @@
-﻿using System.Windows.Input;
+﻿using System;
+using System.Windows.Media.Imaging;
+
+using Xlfdll.Windows.Presentation;
+using Xlfdll.Windows.Presentation.Dialogs;
+
+using RegexTester.Helpers;
 
 namespace RegexTester.Commands
 {
@@ -6,10 +12,18 @@ namespace RegexTester.Commands
     {
         static GeneralCommands()
         {
-            GeneralCommands.AboutCommand = new RoutedUICommand("About", "About", typeof(GeneralCommands),
-                new InputGestureCollection() { new KeyGesture(Key.A, ModifierKeys.Control, "Ctrl+A") });
+            GeneralCommands.AboutCommand = new RelayCommand<Object>(
+                delegate
+                {
+                    AboutWindow aboutWindow = new AboutWindow
+                    (ApplicationHelper.MainWindow,
+                    ApplicationHelper.Metadata,
+                    new BitmapImage(new Uri("pack://application:,,,/Images/RegexTester.png")));
+
+                    aboutWindow.ShowDialog();
+                });
         }
 
-        public static RoutedUICommand AboutCommand { get; private set; }
+        public static RelayCommand<Object> AboutCommand { get; }
     }
 }

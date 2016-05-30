@@ -1,4 +1,10 @@
-﻿using System.Windows.Input;
+﻿using System;
+using System.Windows;
+
+using Xlfdll.Windows.Presentation;
+
+using RegexTester.Data;
+using RegexTester.Helpers;
 
 namespace RegexTester.Commands
 {
@@ -6,19 +12,64 @@ namespace RegexTester.Commands
     {
         static JobCommands()
         {
-            JobCommands.NewCommand = new RoutedUICommand("New Job", "New", typeof(JobCommands),
-                new InputGestureCollection() { new KeyGesture(Key.N, ModifierKeys.Control, "Ctrl+N") });
-            JobCommands.OpenCommand = new RoutedUICommand("Open Job", "Open", typeof(JobCommands),
-                new InputGestureCollection() { new KeyGesture(Key.O, ModifierKeys.Control, "Ctrl+O") });
-            JobCommands.SaveCommand = new RoutedUICommand("Save Job", "Save", typeof(JobCommands),
-                new InputGestureCollection() { new KeyGesture(Key.S, ModifierKeys.Control, "Ctrl+S") });
-            JobCommands.SaveAsCommand = new RoutedUICommand("Save Job As", "Save As", typeof(JobCommands),
-                new InputGestureCollection());
+            JobCommands.NewCommand = new RelayCommand<Object>(
+                delegate
+                {
+                    MessageBoxResult messageBoxResult = DialogHelper.ShowChangeMessageBox();
+
+                    if (messageBoxResult != MessageBoxResult.Cancel)
+                    {
+                        ApplicationHelper.MainWindow.DataContext = new RegexStatus();
+                    }
+                });
+
+            JobCommands.OpenCommand = new RelayCommand<Object>(
+                delegate
+                {
+                    MessageBoxResult messageBoxResult = DialogHelper.ShowChangeMessageBox();
+
+                    if (messageBoxResult != MessageBoxResult.Cancel)
+                    {
+                        String path = DialogHelper.ShowOpenRegexJobFileDialog(JobCommands.OpenCommandName);
+
+                        if (!String.IsNullOrEmpty(path))
+                        {
+                            JobHelper.LoadRegexJob(path);
+                        }
+                    }
+                });
+
+            JobCommands.SaveCommand = new RelayCommand<Object>(
+                delegate
+                {
+                    String path = !String.IsNullOrEmpty(RegexStatus.Current.InputFilePath) ?
+                       RegexStatus.Current.InputFilePath : DialogHelper.ShowSaveRegexJobFileDialog(JobCommands.SaveCommandName);
+
+                    if (!String.IsNullOrEmpty(path))
+                    {
+                        JobHelper.SaveRegexJob(path);
+                    }
+                });
+
+            JobCommands.SaveAsCommand = new RelayCommand<Object>(
+                delegate
+                {
+                    String path = DialogHelper.ShowSaveRegexJobFileDialog(JobCommands.SaveAsCommandName);
+
+                    if (!String.IsNullOrEmpty(path))
+                    {
+                        JobHelper.SaveRegexJob(path);
+                    }
+                });
         }
 
-        public static RoutedUICommand NewCommand { get; private set; }
-        public static RoutedUICommand OpenCommand { get; private set; }
-        public static RoutedUICommand SaveCommand { get; private set; }
-        public static RoutedUICommand SaveAsCommand { get; private set; }
+        public static RelayCommand<Object> NewCommand { get; }
+        public static RelayCommand<Object> OpenCommand { get; }
+        public static RelayCommand<Object> SaveCommand { get; }
+        public static RelayCommand<Object> SaveAsCommand { get; }
+
+        public static readonly String OpenCommandName = "Open";
+        public static readonly String SaveCommandName = "Save";
+        public static readonly String SaveAsCommandName = "Save As";
     }
 }
