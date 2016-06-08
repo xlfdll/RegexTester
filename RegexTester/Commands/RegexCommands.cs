@@ -40,12 +40,12 @@ namespace RegexTester.Commands
                         }
                         else
                         {
-                            ExceptionMessageBox.Show(ApplicationHelper.Metadata.AssemblyTitle, "An unknown error occurred in the process of Match operation.", new ApplicationException("TaskWindow.Result is null"));
+                            ExceptionMessageBox.Show(ApplicationHelper.MainWindow, ApplicationHelper.Metadata.AssemblyTitle, "An unknown error occurred in the process of Match operation.", new ApplicationException("TaskWindow.Result is null"));
                         }
                     }
                     else
                     {
-                        ExceptionMessageBox.Show(ApplicationHelper.Metadata.AssemblyTitle, "An error occurred in the process of Match operation.", taskWindow.Exception.InnerException);
+                        ExceptionMessageBox.Show(ApplicationHelper.MainWindow, ApplicationHelper.Metadata.AssemblyTitle, "An error occurred in the process of Match operation.", taskWindow.Exception.InnerException);
                     }
                 },
                 delegate { return RegexCommands.CanRegexCommandExecute; });
@@ -79,12 +79,12 @@ namespace RegexTester.Commands
                         }
                         else
                         {
-                            ExceptionMessageBox.Show(ApplicationHelper.Metadata.AssemblyTitle, "An unknown error occurred in the process of Split operation.", new ApplicationException("TaskWindow.Result is null"));
+                            ExceptionMessageBox.Show(ApplicationHelper.MainWindow, ApplicationHelper.Metadata.AssemblyTitle, "An unknown error occurred in the process of Split operation.", new ApplicationException("TaskWindow.Result is null"));
                         }
                     }
                     else
                     {
-                        ExceptionMessageBox.Show(ApplicationHelper.Metadata.AssemblyTitle, "An error occurred in the process of Split operation.", taskWindow.Exception.InnerException);
+                        ExceptionMessageBox.Show(ApplicationHelper.MainWindow, ApplicationHelper.Metadata.AssemblyTitle, "An error occurred in the process of Split operation.", taskWindow.Exception.InnerException);
                     }
                 },
                 delegate { return RegexCommands.CanRegexCommandExecute; });
@@ -112,12 +112,12 @@ namespace RegexTester.Commands
                         }
                         else
                         {
-                            ExceptionMessageBox.Show(ApplicationHelper.Metadata.AssemblyTitle, "An unknown error occurred in the process of Replace operation.", new ApplicationException("TaskWindow.Result is null"));
+                            ExceptionMessageBox.Show(ApplicationHelper.MainWindow, ApplicationHelper.Metadata.AssemblyTitle, "An unknown error occurred in the process of Replace operation.", new ApplicationException("TaskWindow.Result is null"));
                         }
                     }
                     else
                     {
-                        ExceptionMessageBox.Show(ApplicationHelper.Metadata.AssemblyTitle, "An error occurred in the process of Replace operation.", taskWindow.Exception.InnerException);
+                        ExceptionMessageBox.Show(ApplicationHelper.MainWindow, ApplicationHelper.Metadata.AssemblyTitle, "An error occurred in the process of Replace operation.", taskWindow.Exception.InnerException);
                     }
                 },
                 delegate { return RegexCommands.CanRegexCommandExecute; });
@@ -142,12 +142,12 @@ namespace RegexTester.Commands
                         }
                         catch (FormatException formatEx)
                         {
-                            ExceptionMessageBox.Show(ApplicationHelper.Metadata.AssemblyTitle, "An unknown error occurred in the process of Measure operation.", formatEx);
+                            ExceptionMessageBox.Show(ApplicationHelper.MainWindow, ApplicationHelper.Metadata.AssemblyTitle, "An unknown error occurred in the process of Measure operation.", formatEx);
                         }
                     }
                     else
                     {
-                        ExceptionMessageBox.Show(ApplicationHelper.Metadata.AssemblyTitle, "An error occurred in the process of Measure operation.", taskWindow.Exception.InnerException);
+                        ExceptionMessageBox.Show(ApplicationHelper.MainWindow, ApplicationHelper.Metadata.AssemblyTitle, "An error occurred in the process of Measure operation.", taskWindow.Exception.InnerException);
                     }
                 },
                 delegate { return RegexCommands.CanRegexCommandExecute; });

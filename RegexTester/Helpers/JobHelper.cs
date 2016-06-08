@@ -30,7 +30,7 @@ namespace RegexTester.Helpers
             }
             else
             {
-                ExceptionMessageBox.Show(ApplicationHelper.Metadata.AssemblyTitle, "Invalid job file format.", taskWindow.Exception.InnerException);
+                ExceptionMessageBox.Show(ApplicationHelper.MainWindow, ApplicationHelper.Metadata.AssemblyTitle, "Invalid job file format.", taskWindow.Exception.InnerException);
             }
         }
 
@@ -49,7 +49,7 @@ namespace RegexTester.Helpers
             }
             else
             {
-                ExceptionMessageBox.Show(ApplicationHelper.Metadata.AssemblyTitle, "Unexpected exception happened.", taskWindow.Exception.InnerException);
+                ExceptionMessageBox.Show(ApplicationHelper.MainWindow, ApplicationHelper.Metadata.AssemblyTitle, "Unexpected exception happened.", taskWindow.Exception.InnerException);
             }
         }
 
@@ -73,7 +73,7 @@ namespace RegexTester.Helpers
             }
             else
             {
-                ExceptionMessageBox.Show(ApplicationHelper.Metadata.AssemblyTitle, "Invalid job file format.", taskWindow.Exception.InnerException);
+                ExceptionMessageBox.Show(ApplicationHelper.MainWindow, ApplicationHelper.Metadata.AssemblyTitle, "Invalid job file format.", taskWindow.Exception.InnerException);
             }
         }
     }
