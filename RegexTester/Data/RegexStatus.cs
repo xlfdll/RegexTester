@@ -23,35 +23,19 @@ namespace RegexTester.Data
 
         #region Main Data
 
+        private RegexInput _input;
+        private RegexResult _result;
+
         public RegexInput Input
         {
-            get
-            {
-                return _input;
-            }
-            set
-            {
-                _input = value;
-
-                OnPropertyChanged(nameof(this.Input));
-            }
+            get { return _input; }
+            set { this.SetField<RegexInput>(ref _input, value); }
         }
         public RegexResult Result
         {
-            get
-            {
-                return _result;
-            }
-            set
-            {
-                _result = value;
-
-                OnPropertyChanged(nameof(this.Result));
-            }
+            get { return _result; }
+            set { this.SetField<RegexResult>(ref _result, value); }
         }
-
-        private RegexInput _input;
-        private RegexResult _result;
 
         #endregion
 

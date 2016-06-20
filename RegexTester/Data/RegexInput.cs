@@ -25,55 +25,23 @@ namespace RegexTester.Data
 
         public String RegexPattern
         {
-            get
-            {
-                return _regexPattern;
-            }
-            set
-            {
-                _regexPattern = value;
-
-                OnPropertyChanged(nameof(this.RegexPattern));
-            }
+            get { return _regexPattern; }
+            set { this.SetField<String>(ref _regexPattern, value); }
         }
         public String ReplacePattern
         {
-            get
-            {
-                return _replacePattern;
-            }
-            set
-            {
-                _replacePattern = value;
-
-                OnPropertyChanged(nameof(this.ReplacePattern));
-            }
+            get { return _replacePattern; }
+            set { this.SetField<String>(ref _replacePattern, value); }
         }
         public String Text
         {
-            get
-            {
-                return _text;
-            }
-            set
-            {
-                _text = value;
-
-                OnPropertyChanged(nameof(this.Text));
-            }
+            get { return _text; }
+            set { this.SetField<String>(ref _text, value); }
         }
         public RegexOptions Options
         {
-            get
-            {
-                return _options;
-            }
-            set
-            {
-                _options = value;
-
-                OnPropertyChanged(nameof(this.Options));
-            }
+            get { return _options; }
+            set { this.SetField<RegexOptions>(ref _options, value); }
         }
 
         public RegexInput Clone()
