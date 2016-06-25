@@ -137,9 +137,9 @@
     <Compile Include="Commands\GeneralCommands.cs" />
     <Compile Include="Commands\RegexCommands.cs" />
     <Compile Include="Commands\JobCommands.cs" />
-    <Compile Include="Data\Configuration\ConfigurationData.History.cs" />
-    <Compile Include="Data\Configuration\ConfigurationData.Main.cs" />
-    <Compile Include="Data\Configuration\ConfigurationData.UI.cs" />
+    <Compile Include="Settings\Settings.History.cs" />
+    <Compile Include="Settings\Settings.Main.cs" />
+    <Compile Include="Settings\Settings.UI.cs" />
     <Compile Include="Data\RegexInput.cs" />
     <Compile Include="Data\RegexMatch.cs" />
     <Compile Include="Data\RegexResult.cs" />

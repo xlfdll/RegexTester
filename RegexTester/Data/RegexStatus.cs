@@ -4,7 +4,6 @@ using System.IO;
 
 using Xlfdll.Core;
 
-using RegexTester.Data.Configuration;
 using RegexTester.Helpers;
 
 namespace RegexTester.Data
@@ -43,11 +42,11 @@ namespace RegexTester.Data
 
         public IReadOnlyCollection<String> RecentRegexPatterns
         {
-            get { return ConfigurationData.History.RecentRegexPatterns; }
+            get { return Settings.History.RecentRegexPatterns; }
         }
         public IReadOnlyCollection<String> RecentReplacePatterns
         {
-            get { return ConfigurationData.History.RecentReplacePatterns; }
+            get { return Settings.History.RecentReplacePatterns; }
         }
 
         #endregion

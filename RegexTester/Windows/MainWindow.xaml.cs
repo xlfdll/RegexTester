@@ -7,7 +7,6 @@ using System.Windows.Data;
 using System.Windows.Input;
 
 using RegexTester.Data;
-using RegexTester.Data.Configuration;
 using RegexTester.Helpers;
 
 namespace RegexTester.Windows
@@ -105,12 +104,12 @@ namespace RegexTester.Windows
 
         private void ResultGridSplitter_DragCompleted(object sender, DragCompletedEventArgs e)
         {
-            ConfigurationData.UI.ResultRowHeight = ResultRowDefinition.Height;
+            Settings.UI.ResultRowHeight = ResultRowDefinition.Height;
         }
 
         private void ResultExpander_Expanded(object sender, RoutedEventArgs e)
         {
-            ResultRowDefinition.Height = ConfigurationData.UI.ResultRowHeight;
+            ResultRowDefinition.Height = Settings.UI.ResultRowHeight;
         }
 
         private void ResultExpander_Collapsed(object sender, RoutedEventArgs e)

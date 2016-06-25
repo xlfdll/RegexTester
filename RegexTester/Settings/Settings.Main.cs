@@ -3,9 +3,9 @@ using System.Text.RegularExpressions;
 
 using RegexTester.Helpers;
 
-namespace RegexTester.Data.Configuration
+namespace RegexTester
 {
-    public static partial class ConfigurationData
+    public static partial class Settings
     {
         public static class Main
         {

@@ -2,9 +2,9 @@
 
 using RegexTester.Helpers;
 
-namespace RegexTester.Data.Configuration
+namespace RegexTester
 {
-    static partial class ConfigurationData
+    public static partial class Settings
     {
         public static class UI
         {

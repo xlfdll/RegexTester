@@ -8,7 +8,6 @@ using Xlfdll.Windows.Presentation;
 using Xlfdll.Windows.Presentation.Dialogs;
 
 using RegexTester.Data;
-using RegexTester.Data.Configuration;
 using RegexTester.Helpers;
 using RegexTester.Windows;
 
@@ -36,7 +35,7 @@ namespace RegexTester.Commands
                         {
                             RegexStatus.Current.Result = regexResult;
 
-                            ConfigurationData.History.AddRecentRegexPattern(RegexStatus.Current.Input.RegexPattern);
+                            Settings.History.AddRecentRegexPattern(RegexStatus.Current.Input.RegexPattern);
                         }
                         else
                         {
@@ -75,7 +74,7 @@ namespace RegexTester.Commands
 
                             RegexStatus.Current.Input.Text = sb.ToString();
 
-                            ConfigurationData.History.AddRecentRegexPattern(RegexStatus.Current.Input.RegexPattern);
+                            Settings.History.AddRecentRegexPattern(RegexStatus.Current.Input.RegexPattern);
                         }
                         else
                         {
@@ -107,8 +106,8 @@ namespace RegexTester.Commands
                         {
                             RegexStatus.Current.Input.Text = result;
 
-                            ConfigurationData.History.AddRecentRegexPattern(RegexStatus.Current.Input.RegexPattern);
-                            ConfigurationData.History.AddRecentReplacePattern(RegexStatus.Current.Input.ReplacePattern);
+                            Settings.History.AddRecentRegexPattern(RegexStatus.Current.Input.RegexPattern);
+                            Settings.History.AddRecentReplacePattern(RegexStatus.Current.Input.ReplacePattern);
                         }
                         else
                         {
