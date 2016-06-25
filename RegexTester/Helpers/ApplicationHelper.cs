@@ -14,11 +14,13 @@ namespace RegexTester.Helpers
         static ApplicationHelper()
         {
             ApplicationHelper.Metadata = new AssemblyMetadata(Assembly.GetExecutingAssembly());
-            ApplicationHelper.Settings = new ApplicationConfiguration(new RegistryConfigurationProcessor(@"Xlfdll\RegexTester", RegistryConfigurationScope.User));
+            ApplicationHelper.Configuration = new ApplicationConfiguration(new RegistryConfigurationProcessor(@"Xlfdll\RegexTester", RegistryConfigurationScope.User));
+            ApplicationHelper.Settings = new Settings(ApplicationHelper.Configuration);
         }
 
         public static AssemblyMetadata Metadata { get; }
-        public static ApplicationConfiguration Settings { get; }
+        public static ApplicationConfiguration Configuration { get; }
+        public static Settings Settings { get; }
 
         public static MainWindow MainWindow
         {

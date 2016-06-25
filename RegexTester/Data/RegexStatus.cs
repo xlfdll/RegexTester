@@ -42,11 +42,11 @@ namespace RegexTester.Data
 
         public IReadOnlyCollection<String> RecentRegexPatterns
         {
-            get { return Settings.History.RecentRegexPatterns; }
+            get { return ApplicationHelper.Settings.History.RecentRegexPatterns; }
         }
         public IReadOnlyCollection<String> RecentReplacePatterns
         {
-            get { return Settings.History.RecentReplacePatterns; }
+            get { return ApplicationHelper.Settings.History.RecentReplacePatterns; }
         }
 
         #endregion

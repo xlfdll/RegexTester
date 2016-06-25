@@ -35,7 +35,7 @@ namespace RegexTester.Commands
                         {
                             RegexStatus.Current.Result = regexResult;
 
-                            Settings.History.AddRecentRegexPattern(RegexStatus.Current.Input.RegexPattern);
+                            ApplicationHelper.Settings.History.AddRecentRegexPattern(RegexStatus.Current.Input.RegexPattern);
                         }
                         else
                         {
@@ -74,7 +74,7 @@ namespace RegexTester.Commands
 
                             RegexStatus.Current.Input.Text = sb.ToString();
 
-                            Settings.History.AddRecentRegexPattern(RegexStatus.Current.Input.RegexPattern);
+                            ApplicationHelper.Settings.History.AddRecentRegexPattern(RegexStatus.Current.Input.RegexPattern);
                         }
                         else
                         {
@@ -106,8 +106,8 @@ namespace RegexTester.Commands
                         {
                             RegexStatus.Current.Input.Text = result;
 
-                            Settings.History.AddRecentRegexPattern(RegexStatus.Current.Input.RegexPattern);
-                            Settings.History.AddRecentReplacePattern(RegexStatus.Current.Input.ReplacePattern);
+                            ApplicationHelper.Settings.History.AddRecentRegexPattern(RegexStatus.Current.Input.RegexPattern);
+                            ApplicationHelper.Settings.History.AddRecentReplacePattern(RegexStatus.Current.Input.ReplacePattern);
                         }
                         else
                         {

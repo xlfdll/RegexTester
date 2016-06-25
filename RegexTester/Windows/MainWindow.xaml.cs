@@ -104,12 +104,12 @@ namespace RegexTester.Windows
 
         private void ResultGridSplitter_DragCompleted(object sender, DragCompletedEventArgs e)
         {
-            Settings.UI.ResultRowHeight = ResultRowDefinition.Height;
+            ApplicationHelper.Settings.UI.ResultRowHeight = ResultRowDefinition.Height;
         }
 
         private void ResultExpander_Expanded(object sender, RoutedEventArgs e)
         {
-            ResultRowDefinition.Height = Settings.UI.ResultRowHeight;
+            ResultRowDefinition.Height = ApplicationHelper.Settings.UI.ResultRowHeight;
         }
 
         private void ResultExpander_Collapsed(object sender, RoutedEventArgs e)
