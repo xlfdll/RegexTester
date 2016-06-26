@@ -8,17 +8,13 @@
         Loaded="EditWindow_Loaded">
 
     <Grid>
+        <Grid.Resources>
+            <Style TargetType="Button" BasedOn="{StaticResource ModernCommonButtonStyle}"/>
+        </Grid.Resources>
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <Grid.Resources>
-            <Style TargetType="Button" BasedOn="{StaticResource ModernButtonStyle}">
-                <Setter Property="Margin" Value="5"/>
-                <Setter Property="Width" Value="100"/>
-                <Setter Property="Height" Value="30"/>
-            </Style>
-        </Grid.Resources>
 
         <TextBox Name="PatternTextBox" Grid.Row="0" Padding="5"
                  TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Auto"/>
