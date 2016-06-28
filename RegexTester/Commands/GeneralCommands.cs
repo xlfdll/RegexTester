@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Windows.Media.Imaging;
 
 using Xlfdll.Windows.Presentation;
 using Xlfdll.Windows.Presentation.Dialogs;
@@ -18,7 +17,7 @@ namespace RegexTester.Commands
                     AboutWindow aboutWindow = new AboutWindow
                     (ApplicationHelper.MainWindow,
                     ApplicationHelper.Metadata,
-                    new BitmapImage(new Uri("pack://application:,,,/Images/RegexTester.png")));
+                    new ApplicationPackUri("/Images/RegexTester.png"));
 
                     aboutWindow.ShowDialog();
                 });

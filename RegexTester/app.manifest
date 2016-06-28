@@ -58,7 +58,7 @@
   -->
 
   <!-- Windows のコモン コントロールとダイアログのテーマを有効にします (Windows XP 以降) -->
-  
+
   <dependency>
     <dependentAssembly>
       <assemblyIdentity
@@ -71,6 +71,6 @@
         />
     </dependentAssembly>
   </dependency>
-  
+
 
 </assembly>

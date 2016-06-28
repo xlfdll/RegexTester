@@ -71,6 +71,9 @@
     <Compile Include="..\..\XDLibrary\Xlfdll.Core\Configuration\IConfigurationProcessor.cs">
       <Link>Base\Configuration\IConfigurationProcessor.cs</Link>
     </Compile>
+    <Compile Include="..\..\XDLibrary\Xlfdll.Windows.Presentation\ApplicationPackUri.cs">
+      <Link>Base\Windows\Presentation\ApplicationPackUri.cs</Link>
+    </Compile>
     <Compile Include="..\..\XDLibrary\Xlfdll.Windows.Presentation\Dialogs\AboutWindow.xaml.cs">
       <Link>Base\Windows\Presentation\Dialogs\AboutWindow.xaml.cs</Link>
       <DependentUpon>AboutWindow.xaml</DependentUpon>
@@ -82,7 +85,7 @@
       <Link>Base\Windows\Presentation\Functions\WindowFunctions.cs</Link>
     </Compile>
     <Compile Include="..\..\XDLibrary\Xlfdll.Windows.Presentation\RelayCommand.cs">
-      <Link>Base\Windows\RelayCommand.cs</Link>
+      <Link>Base\Windows\Presentation\RelayCommand.cs</Link>
     </Compile>
     <Compile Include="Commands\ResultCommands.cs" />
     <Compile Include="Configuration\Settings.cs" />
