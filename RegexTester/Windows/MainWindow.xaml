@@ -9,10 +9,6 @@
         AllowDrop="True" PreviewDragOver="MainWindow_PreviewDragOver" Drop="MainWindow_Drop"
         Loaded="MainWindow_Loaded" Closing="MainWindow_Closing">
 
-    <Window.Resources>
-        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
-    </Window.Resources>
-
     <Window.InputBindings>
         <KeyBinding Gesture="Ctrl+N" Command="{x:Static command:JobCommands.NewCommand}"/>
         <KeyBinding Gesture="Ctrl+O" Command="{x:Static command:JobCommands.OpenCommand}"/>
@@ -26,6 +22,9 @@
     </Window.InputBindings>
 
     <Grid>
+        <Grid.Resources>
+            <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+        </Grid.Resources>
         <Grid.RowDefinitions>
             <RowDefinition Height="40"/>
             <RowDefinition/>

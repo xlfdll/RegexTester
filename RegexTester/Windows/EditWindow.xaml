@@ -9,6 +9,9 @@
 
     <Grid>
         <Grid.Resources>
+            <Style TargetType="TextBox">
+                <Setter Property="Padding" Value="5"/>
+            </Style>
             <Style TargetType="Button" BasedOn="{StaticResource ModernCommonButtonStyle}"/>
         </Grid.Resources>
         <Grid.RowDefinitions>
@@ -16,8 +19,7 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <TextBox Name="PatternTextBox" Grid.Row="0" Padding="5"
-                 TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Auto"/>
+        <TextBox Name="PatternTextBox" Grid.Row="0" TextWrapping="Wrap" AcceptsReturn="True"/>
 
         <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right">
             <Button Grid.Column="1" Content="_OK" IsDefault="True" Click="OKButton_Click"/>
