@@ -12,7 +12,8 @@ namespace RegexTester.Commands
     {
         static JobCommands()
         {
-            JobCommands.NewCommand = new RelayCommand<Object>(
+            JobCommands.NewCommand = new RelayCommand<Object>
+            (
                 delegate
                 {
                     MessageBoxResult messageBoxResult = DialogHelper.ShowChangeMessageBox();
@@ -21,9 +22,11 @@ namespace RegexTester.Commands
                     {
                         ApplicationHelper.MainWindow.DataContext = new RegexStatus();
                     }
-                });
+                }
+            );
 
-            JobCommands.OpenCommand = new RelayCommand<Object>(
+            JobCommands.OpenCommand = new RelayCommand<Object>
+            (
                 delegate
                 {
                     MessageBoxResult messageBoxResult = DialogHelper.ShowChangeMessageBox();
@@ -37,9 +40,11 @@ namespace RegexTester.Commands
                             JobHelper.LoadRegexJob(path);
                         }
                     }
-                });
+                }
+            );
 
-            JobCommands.SaveCommand = new RelayCommand<Object>(
+            JobCommands.SaveCommand = new RelayCommand<Object>
+            (
                 delegate
                 {
                     String path = !String.IsNullOrEmpty(RegexStatus.Current.InputFilePath) ?
@@ -49,9 +54,11 @@ namespace RegexTester.Commands
                     {
                         JobHelper.SaveRegexJob(path);
                     }
-                });
+                }
+            );
 
-            JobCommands.SaveAsCommand = new RelayCommand<Object>(
+            JobCommands.SaveAsCommand = new RelayCommand<Object>
+            (
                 delegate
                 {
                     String path = DialogHelper.ShowSaveRegexJobFileDialog(JobCommands.SaveAsCommandName);
@@ -60,7 +67,8 @@ namespace RegexTester.Commands
                     {
                         JobHelper.SaveRegexJob(path);
                     }
-                });
+                }
+            );
         }
 
         public static RelayCommand<Object> NewCommand { get; }

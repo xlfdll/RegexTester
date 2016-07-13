@@ -10,7 +10,8 @@ namespace RegexTester.Commands
     {
         static ResultCommands()
         {
-            ResultCommands.CopyValueCommand = new RelayCommand<RegexMatch>(
+            ResultCommands.CopyValueCommand = new RelayCommand<RegexMatch>
+            (
                 (RegexMatch parameter) =>
                 {
                     Clipboard.SetText(parameter.Value);
@@ -18,7 +19,8 @@ namespace RegexTester.Commands
                 (RegexMatch parameter) =>
                 {
                     return (parameter != null);
-                });
+                }
+            );
         }
 
         public static RelayCommand<RegexMatch> CopyValueCommand { get; }

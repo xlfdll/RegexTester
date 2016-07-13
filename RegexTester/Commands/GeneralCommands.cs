@@ -11,7 +11,8 @@ namespace RegexTester.Commands
     {
         static GeneralCommands()
         {
-            GeneralCommands.AboutCommand = new RelayCommand<Object>(
+            GeneralCommands.AboutCommand = new RelayCommand<Object>
+            (
                 delegate
                 {
                     AboutWindow aboutWindow = new AboutWindow
@@ -20,7 +21,8 @@ namespace RegexTester.Commands
                     new ApplicationPackUri("/Images/RegexTester.png"));
 
                     aboutWindow.ShowDialog();
-                });
+                }
+            );
         }
 
         public static RelayCommand<Object> AboutCommand { get; }

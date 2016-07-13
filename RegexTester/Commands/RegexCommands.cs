@@ -17,7 +17,8 @@ namespace RegexTester.Commands
     {
         static RegexCommands()
         {
-            RegexCommands.MatchCommand = new RelayCommand<Object>(
+            RegexCommands.MatchCommand = new RelayCommand<Object>
+            (
                 delegate
                 {
                     TaskWindow taskWindow = new TaskWindow(TaskHelper.Match, null)
@@ -47,9 +48,11 @@ namespace RegexTester.Commands
                         ExceptionMessageBox.Show(ApplicationHelper.MainWindow, ApplicationHelper.Metadata.AssemblyTitle, "An error occurred in the process of Match operation.", taskWindow.Exception.InnerException);
                     }
                 },
-                delegate { return RegexCommands.CanRegexCommandExecute; });
+                delegate { return RegexCommands.CanRegexCommandExecute; }
+            );
 
-            RegexCommands.SplitCommand = new RelayCommand<Object>(
+            RegexCommands.SplitCommand = new RelayCommand<Object>
+            (
                 delegate
                 {
                     TaskWindow taskWindow = new TaskWindow(TaskHelper.Split, null)
@@ -86,9 +89,11 @@ namespace RegexTester.Commands
                         ExceptionMessageBox.Show(ApplicationHelper.MainWindow, ApplicationHelper.Metadata.AssemblyTitle, "An error occurred in the process of Split operation.", taskWindow.Exception.InnerException);
                     }
                 },
-                delegate { return RegexCommands.CanRegexCommandExecute; });
+                delegate { return RegexCommands.CanRegexCommandExecute; }
+            );
 
-            RegexCommands.ReplaceCommand = new RelayCommand<Object>(
+            RegexCommands.ReplaceCommand = new RelayCommand<Object>
+            (
                 delegate
                 {
                     TaskWindow taskWindow = new TaskWindow(TaskHelper.Replace, null)
@@ -119,9 +124,11 @@ namespace RegexTester.Commands
                         ExceptionMessageBox.Show(ApplicationHelper.MainWindow, ApplicationHelper.Metadata.AssemblyTitle, "An error occurred in the process of Replace operation.", taskWindow.Exception.InnerException);
                     }
                 },
-                delegate { return RegexCommands.CanRegexCommandExecute; });
+                delegate { return RegexCommands.CanRegexCommandExecute; }
+            );
 
-            RegexCommands.MeasureCommand = new RelayCommand<Object>(
+            RegexCommands.MeasureCommand = new RelayCommand<Object>
+            (
                 delegate
                 {
                     TaskWindow taskWindow = new TaskWindow(TaskHelper.Measure, null)
@@ -149,9 +156,11 @@ namespace RegexTester.Commands
                         ExceptionMessageBox.Show(ApplicationHelper.MainWindow, ApplicationHelper.Metadata.AssemblyTitle, "An error occurred in the process of Measure operation.", taskWindow.Exception.InnerException);
                     }
                 },
-                delegate { return RegexCommands.CanRegexCommandExecute; });
+                delegate { return RegexCommands.CanRegexCommandExecute; }
+            );
 
-            RegexCommands.EditCommand = new RelayCommand<String>(
+            RegexCommands.EditCommand = new RelayCommand<String>
+            (
                 (String parameter) =>
                 {
                     EditWindow editWindow = new EditWindow()
@@ -163,7 +172,8 @@ namespace RegexTester.Commands
                         new Binding(parameter) { UpdateSourceTrigger = UpdateSourceTrigger.Explicit });
 
                     editWindow.ShowDialog();
-                });
+                }
+            );
         }
 
         public static RelayCommand<Object> MatchCommand { get; }
