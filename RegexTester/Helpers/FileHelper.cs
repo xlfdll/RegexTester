@@ -34,7 +34,7 @@ namespace RegexTester.Helpers
             using (XmlWriter writer = XmlWriter.Create(path))
             {
                 writer.WriteStartDocument();
-                writer.WriteStartElement(Path.GetFileNameWithoutExtension(Application.ResourceAssembly.Location), FileHelper.Namespace);
+                writer.WriteStartElement(ApplicationHelper.Metadata.AssemblyInternalName, FileHelper.Namespace);
 
                 writer.WriteStartElement("Input");
 
