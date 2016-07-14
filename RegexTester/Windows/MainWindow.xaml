@@ -170,7 +170,7 @@
                 </Grid>
             </GroupBox>
             <GroupBox Grid.Row="2" Grid.Column="0" Header="Text">
-                <TextBox Name="ContentTextBox" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Auto"
+                <TextBox Name="ContentTextBox" AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto"
                          PreviewDragOver="MainWindow_PreviewDragOver" PreviewDrop="ContentTextBox_PreviewDrop"
                          Text="{Binding Path=Input.Text, UpdateSourceTrigger=PropertyChanged}" TextChanged="ContentTextBox_TextChanged"
                          SelectionChanged="ContentTextBox_SelectionChanged"/>
