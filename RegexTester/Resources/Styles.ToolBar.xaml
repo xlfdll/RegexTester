@@ -4,7 +4,7 @@
     <Style TargetType="StackPanel">
         <Setter Property="Orientation" Value="Horizontal"/>
     </Style>
-    <Style TargetType="AccessText">
+    <Style TargetType="TextBlock">
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="Margin" Value="3"/>
     </Style>
