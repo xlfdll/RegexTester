@@ -23,7 +23,7 @@ namespace RegexTester.Commands
                 {
                     TaskWindow taskWindow = new TaskWindow(TaskHelper.Match, null)
                     {
-                        Owner = Application.Current.MainWindow
+                        Owner = ApplicationHelper.MainWindow
                     };
 
                     taskWindow.ShowDialog();
@@ -57,7 +57,7 @@ namespace RegexTester.Commands
                 {
                     TaskWindow taskWindow = new TaskWindow(TaskHelper.Split, null)
                     {
-                        Owner = Application.Current.MainWindow
+                        Owner = ApplicationHelper.MainWindow
                     };
 
                     taskWindow.ShowDialog();
@@ -98,7 +98,7 @@ namespace RegexTester.Commands
                 {
                     TaskWindow taskWindow = new TaskWindow(TaskHelper.Replace, null)
                     {
-                        Owner = Application.Current.MainWindow
+                        Owner = ApplicationHelper.MainWindow
                     };
 
                     taskWindow.ShowDialog();
@@ -133,7 +133,7 @@ namespace RegexTester.Commands
                 {
                     TaskWindow taskWindow = new TaskWindow(TaskHelper.Measure, null)
                     {
-                        Owner = Application.Current.MainWindow
+                        Owner = ApplicationHelper.MainWindow
                     };
 
                     taskWindow.ShowDialog();
@@ -165,7 +165,7 @@ namespace RegexTester.Commands
                 {
                     EditWindow editWindow = new EditWindow()
                     {
-                        Owner = Application.Current.MainWindow
+                        Owner = ApplicationHelper.MainWindow
                     };
 
                     editWindow.PatternTextBox.SetBinding(TextBox.TextProperty,
