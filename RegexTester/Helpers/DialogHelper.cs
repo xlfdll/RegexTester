@@ -7,21 +7,18 @@ using System.Windows;
 using Microsoft.Win32;
 
 using RegexTester.Data;
-using RegexTester.Commands;
 
 namespace RegexTester.Helpers
 {
     public static class DialogHelper
     {
-        public static String ShowOpenRegexJobFileDialog(String commandName)
+        public static String ShowOpenRegexJobFileDialog()
         {
             String path = String.Empty;
 
             OpenFileDialog openFileDialog = new OpenFileDialog()
             {
-                Filter = "Regex Job (*.xml)|*.xml|All Files(*.*)|*.*",
-                RestoreDirectory = true,
-                Title = commandName
+                Filter = "Regex Job (*.xml)|*.xml|All Files(*.*)|*.*"
             };
 
             if (openFileDialog.ShowDialog(ApplicationHelper.MainWindow) == true)
@@ -32,15 +29,13 @@ namespace RegexTester.Helpers
             return path;
         }
 
-        public static String ShowSaveRegexJobFileDialog(String commandName)
+        public static String ShowSaveRegexJobFileDialog()
         {
             String path = String.Empty;
 
             SaveFileDialog saveFileDialog = new SaveFileDialog()
             {
-                Filter = "Regex Job (*.xml)|*.xml|All Files(*.*)|*.*",
-                RestoreDirectory = true,
-                Title = commandName
+                Filter = "Regex Job (*.xml)|*.xml|All Files(*.*)|*.*"
             };
 
             if (saveFileDialog.ShowDialog(ApplicationHelper.MainWindow) == true)
@@ -64,7 +59,7 @@ namespace RegexTester.Helpers
                 if (messageBoxResult == MessageBoxResult.Yes)
                 {
                     String path = !String.IsNullOrEmpty(RegexState.Current.InputFilePath) ?
-                        RegexState.Current.InputFilePath : DialogHelper.ShowSaveRegexJobFileDialog(JobCommands.SaveCommandName);
+                        RegexState.Current.InputFilePath : DialogHelper.ShowSaveRegexJobFileDialog();
 
                     if (!String.IsNullOrEmpty(path))
                     {

@@ -33,7 +33,7 @@ namespace RegexTester.Commands
 
                     if (messageBoxResult != MessageBoxResult.Cancel)
                     {
-                        String path = DialogHelper.ShowOpenRegexJobFileDialog(JobCommands.OpenCommandName);
+                        String path = DialogHelper.ShowOpenRegexJobFileDialog();
 
                         if (!String.IsNullOrEmpty(path))
                         {
@@ -48,7 +48,7 @@ namespace RegexTester.Commands
                 delegate
                 {
                     String path = !String.IsNullOrEmpty(RegexState.Current.InputFilePath) ?
-                       RegexState.Current.InputFilePath : DialogHelper.ShowSaveRegexJobFileDialog(JobCommands.SaveCommandName);
+                       RegexState.Current.InputFilePath : DialogHelper.ShowSaveRegexJobFileDialog();
 
                     if (!String.IsNullOrEmpty(path))
                     {
@@ -61,7 +61,7 @@ namespace RegexTester.Commands
             (
                 delegate
                 {
-                    String path = DialogHelper.ShowSaveRegexJobFileDialog(JobCommands.SaveAsCommandName);
+                    String path = DialogHelper.ShowSaveRegexJobFileDialog();
 
                     if (!String.IsNullOrEmpty(path))
                     {
@@ -75,9 +75,5 @@ namespace RegexTester.Commands
         public static RelayCommand<Object> OpenCommand { get; }
         public static RelayCommand<Object> SaveCommand { get; }
         public static RelayCommand<Object> SaveAsCommand { get; }
-
-        public static readonly String OpenCommandName = "Open";
-        public static readonly String SaveCommandName = "Save";
-        public static readonly String SaveAsCommandName = "Save As";
     }
 }
