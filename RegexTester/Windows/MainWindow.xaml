@@ -29,7 +29,7 @@
             <RowDefinition Height="40"/>
             <RowDefinition/>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Name="ResultRowDefinition" Height="Auto"/>
+            <RowDefinition x:Name="ResultRowDefinition" Height="Auto"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
@@ -103,7 +103,7 @@
             <Separator/>
         </ToolBar>
 
-        <Grid Name="InputGrid" Grid.Row="1">
+        <Grid x:Name="InputGrid" Grid.Row="1">
             <Grid.Resources>
                 <Style TargetType="Button" BasedOn="{StaticResource ModernButtonStyle}"/>
             </Grid.Resources>
@@ -126,7 +126,7 @@
                         <ColumnDefinition Width="32"/>
                     </Grid.ColumnDefinitions>
 
-                    <ComboBox Name="RegexPatternComboBox" Grid.Column="0" IsEditable="True"
+                    <ComboBox x:Name="RegexPatternComboBox" Grid.Column="0" IsEditable="True"
                               Text="{Binding Path=Input.RegexPattern}" ItemsSource="{Binding Path=RecentRegexPatterns}"
                               DropDownOpened="PatternComboBox_DropDownOpened">
                         <ComboBox.InputBindings>
@@ -151,7 +151,7 @@
                         <ColumnDefinition Width="32"/>
                     </Grid.ColumnDefinitions>
 
-                    <ComboBox Name="ReplacePatternComboBox" Grid.Column="0" IsEditable="True"
+                    <ComboBox x:Name="ReplacePatternComboBox" Grid.Column="0" IsEditable="True"
                               Text="{Binding Path=Input.ReplacePattern}" ItemsSource="{Binding Path=RecentReplacePatterns}"
                               DropDownOpened="PatternComboBox_DropDownOpened">
                         <ComboBox.InputBindings>
@@ -170,7 +170,7 @@
                 </Grid>
             </GroupBox>
             <GroupBox Grid.Row="2" Grid.Column="0" Header="Text">
-                <TextBox Name="ContentTextBox" AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto"
+                <TextBox x:Name="ContentTextBox" AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto"
                          PreviewDragOver="MainWindow_PreviewDragOver" PreviewDrop="ContentTextBox_PreviewDrop"
                          Text="{Binding Path=Input.Text, UpdateSourceTrigger=PropertyChanged}" TextChanged="ContentTextBox_TextChanged"
                          SelectionChanged="ContentTextBox_SelectionChanged"/>
@@ -233,10 +233,10 @@
             </GridSplitter.Style>
         </GridSplitter>
 
-        <Expander Name="ResultExpander" Grid.Row="3" Header="Result" FocusManager.IsFocusScope="True"
+        <Expander x:Name="ResultExpander" Grid.Row="3" Header="Result" FocusManager.IsFocusScope="True"
                   IsExpanded="{Binding Path=Result.IsAvailable, Mode=OneWay}"
                   Expanded="ResultExpander_Expanded" Collapsed="ResultExpander_Collapsed">
-            <TreeView Name="ResultTreeView" ItemsSource="{Binding Path=Result.Results}" MinHeight="150"
+            <TreeView x:Name="ResultTreeView" ItemsSource="{Binding Path=Result.Results}" MinHeight="150"
                       SelectedItemChanged="ResultTreeView_SelectedItemChanged">
                 <TreeView.Resources>
                     <HierarchicalDataTemplate DataType="{x:Type data:RegexResult}" ItemsSource="{Binding Path=Results}">
@@ -310,13 +310,13 @@
             <Separator Grid.Column="6"/>
             <StatusBarItem Grid.Column="7">
                 <TextBlock>
-                    Index <TextBlock Name="ContentCaretIndexTextBlock" Text="0"/>
+                    Index <TextBlock x:Name="ContentCaretIndexTextBlock" Text="0"/>
                 </TextBlock>
             </StatusBarItem>
             <Separator Grid.Column="8"/>
             <StatusBarItem Grid.Column="9">
                 <TextBlock>
-                    Line <TextBlock Name="ContentLineIndexTextBlock" Text="1"/> / <TextBlock Name="ContentLineCountTextBlock" Text="1"/>
+                    Line <TextBlock x:Name="ContentLineIndexTextBlock" Text="1"/> / <TextBlock x:Name="ContentLineCountTextBlock" Text="1"/>
                 </TextBlock>
             </StatusBarItem>
             <Separator Grid.Column="10"/>
