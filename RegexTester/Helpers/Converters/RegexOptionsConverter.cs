@@ -20,7 +20,7 @@ namespace RegexTester.Helpers.Converters
             RegexOptions targetRegexOptions = (RegexOptions)Enum.Parse(typeof(RegexOptions), parameter.ToString());
 
             // Use boolean operators explicitly
-            return (RegexStatus.Current.Input.Options & targetRegexOptions) != RegexOptions.None;
+            return (RegexState.Current.Input.Options & targetRegexOptions) != RegexOptions.None;
         }
 
         public Object ConvertBack(Object value, Type targetType, Object parameter, CultureInfo culture)
@@ -29,11 +29,11 @@ namespace RegexTester.Helpers.Converters
 
             if (System.Convert.ToBoolean(value))
             {
-                return (RegexStatus.Current.Input.Options | targetRegexOptions);
+                return (RegexState.Current.Input.Options | targetRegexOptions);
             }
             else
             {
-                return (RegexStatus.Current.Input.Options ^ targetRegexOptions);
+                return (RegexState.Current.Input.Options ^ targetRegexOptions);
             }
         }
     }

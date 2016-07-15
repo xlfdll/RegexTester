@@ -24,8 +24,8 @@ namespace RegexTester.Helpers
 
                 if (regexInput != null)
                 {
-                    RegexStatus.Current.Input = regexInput;
-                    RegexStatus.Current.Update(path);
+                    RegexState.Current.Input = regexInput;
+                    RegexState.Current.Update(path);
                 }
             }
             else
@@ -45,7 +45,7 @@ namespace RegexTester.Helpers
 
             if (taskWindow.Exception == null)
             {
-                RegexStatus.Current.Update(path);
+                RegexState.Current.Update(path);
             }
             else
             {
@@ -68,7 +68,7 @@ namespace RegexTester.Helpers
 
                 if (text != null)
                 {
-                    RegexStatus.Current.Input.Text = text;
+                    RegexState.Current.Input.Text = text;
                 }
             }
             else

@@ -23,7 +23,7 @@ namespace RegexTester.Windows
 
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            this.DataContext = new RegexStatus();
+            this.DataContext = new RegexState();
         }
 
         private void MainWindow_Closing(object sender, CancelEventArgs e)
@@ -97,7 +97,7 @@ namespace RegexTester.Windows
 
         private void ContentTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            RegexStatus.Current.Result = new RegexResult();
+            RegexState.Current.Result = new RegexResult();
         }
 
         // GridSplitter is a Thumb control, hence DragStarted and DragCompleted events are available
@@ -123,9 +123,9 @@ namespace RegexTester.Windows
 
             if (regexMatch != null)
             {
-                // A fix to simulate TextBox.HideSelection in Windows Forms
+                // A fix to simulate TextBox.HideSelection = False in Windows Forms
                 // Set FocusManager.IsFocusScope = true on TreeView
-                // Then, the following Keyboard.Focus() statements can set logical focus on TextBox
+                // Then, the following Keyboard.Focus() statements can set logical focus on TextBox, but actual focus on TreeView
                 Keyboard.Focus(ContentTextBox);
                 Keyboard.Focus(ResultTreeView);
 

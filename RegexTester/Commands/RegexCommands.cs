@@ -34,9 +34,9 @@ namespace RegexTester.Commands
 
                         if (regexResult != null)
                         {
-                            RegexStatus.Current.Result = regexResult;
+                            RegexState.Current.Result = regexResult;
 
-                            ApplicationHelper.Settings.History.AddRecentRegexPattern(RegexStatus.Current.Input.RegexPattern);
+                            ApplicationHelper.Settings.History.AddRecentRegexPattern(RegexState.Current.Input.RegexPattern);
                         }
                         else
                         {
@@ -75,9 +75,9 @@ namespace RegexTester.Commands
                                 sb.AppendLine(item);
                             }
 
-                            RegexStatus.Current.Input.Text = sb.ToString();
+                            RegexState.Current.Input.Text = sb.ToString();
 
-                            ApplicationHelper.Settings.History.AddRecentRegexPattern(RegexStatus.Current.Input.RegexPattern);
+                            ApplicationHelper.Settings.History.AddRecentRegexPattern(RegexState.Current.Input.RegexPattern);
                         }
                         else
                         {
@@ -109,10 +109,10 @@ namespace RegexTester.Commands
 
                         if (result != null)
                         {
-                            RegexStatus.Current.Input.Text = result;
+                            RegexState.Current.Input.Text = result;
 
-                            ApplicationHelper.Settings.History.AddRecentRegexPattern(RegexStatus.Current.Input.RegexPattern);
-                            ApplicationHelper.Settings.History.AddRecentReplacePattern(RegexStatus.Current.Input.ReplacePattern);
+                            ApplicationHelper.Settings.History.AddRecentRegexPattern(RegexState.Current.Input.RegexPattern);
+                            ApplicationHelper.Settings.History.AddRecentReplacePattern(RegexState.Current.Input.ReplacePattern);
                         }
                         else
                         {
@@ -184,7 +184,7 @@ namespace RegexTester.Commands
 
         private static Boolean CanRegexCommandExecute
         {
-            get { return RegexStatus.Current != null && !String.IsNullOrEmpty(RegexStatus.Current.Input.RegexPattern); }
+            get { return RegexState.Current != null && !String.IsNullOrEmpty(RegexState.Current.Input.RegexPattern); }
         }
     }
 }
