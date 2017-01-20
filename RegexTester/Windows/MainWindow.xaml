@@ -22,9 +22,6 @@
     </Window.InputBindings>
 
     <Grid>
-        <Grid.Resources>
-            <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
-        </Grid.Resources>
         <Grid.RowDefinitions>
             <RowDefinition Height="40"/>
             <RowDefinition/>

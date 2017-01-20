@@ -9,6 +9,7 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="pack://application:,,,/Resources/Icons.RegexTester.xaml"/>
                 <ResourceDictionary Source="pack://application:,,,/Resources/Styles.App.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/Resources/Others.App.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
