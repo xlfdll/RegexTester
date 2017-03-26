@@ -90,7 +90,6 @@
     <Compile Include="Commands\ResultCommands.cs" />
     <Compile Include="Configuration\Settings.cs" />
     <Compile Include="Helpers\RegexHelper.cs" />
-    <Compile Include="Helpers\TaskHelper.cs" />
     <Compile Include="Helpers\ValueHelper.cs" />
     <Compile Include="Windows\TaskWindow.xaml.cs">
       <DependentUpon>TaskWindow.xaml</DependentUpon>
