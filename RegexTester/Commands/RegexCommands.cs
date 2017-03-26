@@ -189,7 +189,7 @@ namespace RegexTester.Commands
 
 			RegexCommands.EditCommand = new RelayCommand<String>
 			(
-				(String parameter) =>
+				delegate (String parameter)
 				{
 					EditWindow editWindow = new EditWindow()
 					{
