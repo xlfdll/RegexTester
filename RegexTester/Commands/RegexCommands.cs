@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Text;
-using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 
@@ -211,8 +210,6 @@ namespace RegexTester.Commands
 		public static RelayCommand<String> EditCommand { get; }
 
 		private static Boolean CanRegexCommandExecute
-		{
-			get { return RegexState.Current != null && !String.IsNullOrEmpty(RegexState.Current.Input.RegexPattern); }
-		}
+			=> RegexState.Current != null && !String.IsNullOrEmpty(RegexState.Current.Input.RegexPattern);
 	}
 }

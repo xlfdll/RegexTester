@@ -1,14 +1,12 @@
 ﻿using System;
-using System.IO;
 using System.Text.RegularExpressions;
-using System.Windows;
 using System.Xml;
 
 using RegexTester.Data;
 
 namespace RegexTester.Helpers
 {
-    public static class FileHelper
+	public static class FileHelper
     {
         public static RegexInput LoadRegexInput(String path)
         {
