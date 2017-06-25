@@ -21,7 +21,7 @@ namespace RegexTester.Windows
         {
             WindowFunctions.DisableMinimizeBox(this);
 
-            PatternTextBox.DataContext = RegexState.Current.Input;
+            PatternTextBox.DataContext = AppState.Current.Input;
         }
 
         private void OKButton_Click(object sender, RoutedEventArgs e)

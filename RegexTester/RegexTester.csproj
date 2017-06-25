@@ -153,7 +153,7 @@
     <Compile Include="Data\RegexInput.cs" />
     <Compile Include="Data\RegexMatch.cs" />
     <Compile Include="Data\RegexResult.cs" />
-    <Compile Include="Data\RegexState.cs" />
+    <Compile Include="Data\AppState.cs" />
     <Compile Include="Helpers\ApplicationHelper.cs" />
     <Compile Include="Helpers\DialogHelper.cs" />
     <Compile Include="Helpers\Converters\RegexOptionsConverter.cs" />

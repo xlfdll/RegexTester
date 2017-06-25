@@ -17,7 +17,7 @@ namespace RegexTester.Helpers
 			(
 				delegate (Object argument)
 				{
-					return RegexHelper.Match(RegexState.Current.Input);
+					return RegexHelper.Match(AppState.Current.Input);
 				},
 				path
 			)
@@ -33,8 +33,8 @@ namespace RegexTester.Helpers
 
 				if (regexInput != null)
 				{
-					RegexState.Current.Input = regexInput;
-					RegexState.Current.Update(path);
+					AppState.Current.Input = regexInput;
+					AppState.Current.Update(path);
 				}
 			}
 			else
@@ -49,7 +49,7 @@ namespace RegexTester.Helpers
 			(
 				delegate (Object argument)
 				{
-					FileHelper.SaveRegexInput(argument.ToString(), RegexState.Current.Input);
+					FileHelper.SaveRegexInput(argument.ToString(), AppState.Current.Input);
 
 					return null;
 				},
@@ -63,7 +63,7 @@ namespace RegexTester.Helpers
 
 			if (taskWindow.Exception == null)
 			{
-				RegexState.Current.Update(path);
+				AppState.Current.Update(path);
 			}
 			else
 			{
@@ -94,7 +94,7 @@ namespace RegexTester.Helpers
 
 				if (text != null)
 				{
-					RegexState.Current.Input.Text = text;
+					AppState.Current.Input.Text = text;
 				}
 			}
 			else

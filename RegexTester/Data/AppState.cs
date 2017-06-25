@@ -8,16 +8,16 @@ using RegexTester.Helpers;
 
 namespace RegexTester.Data
 {
-	public class RegexState : ObservableObject
+	public class AppState : ObservableObject
 	{
-		public RegexState()
+		public AppState()
 		{
 			this.Input = new RegexInput();
 			this.Result = new RegexResult();
 
 			this.Update(String.Empty);
 
-			RegexState.Current = this;
+			AppState.Current = this;
 		}
 
 		#region Main Data
@@ -71,6 +71,6 @@ namespace RegexTester.Data
 
 		#endregion
 
-		public static RegexState Current { get; private set; }
+		public static AppState Current { get; private set; }
 	}
 }

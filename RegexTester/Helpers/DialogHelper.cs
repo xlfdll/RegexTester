@@ -50,16 +50,16 @@ namespace RegexTester.Helpers
         {
             MessageBoxResult messageBoxResult = MessageBoxResult.No;
 
-            if (RegexState.Current.IsInputModified)
+            if (AppState.Current.IsInputModified)
             {
                 messageBoxResult = MessageBox.Show(ApplicationHelper.MainWindow, String.Format("Do you want to save current input changes to {0}?",
-                    (!String.IsNullOrEmpty(RegexState.Current.InputFilePath) ? Path.GetFileName(RegexState.Current.InputFilePath) : "New Regex Job")),
+                    (!String.IsNullOrEmpty(AppState.Current.InputFilePath) ? Path.GetFileName(AppState.Current.InputFilePath) : "New Regex Job")),
                     ApplicationHelper.Metadata.AssemblyTitle, MessageBoxButton.YesNoCancel, MessageBoxImage.Question);
 
                 if (messageBoxResult == MessageBoxResult.Yes)
                 {
-                    String path = !String.IsNullOrEmpty(RegexState.Current.InputFilePath) ?
-                        RegexState.Current.InputFilePath : DialogHelper.ShowSaveRegexJobFileDialog();
+                    String path = !String.IsNullOrEmpty(AppState.Current.InputFilePath) ?
+                        AppState.Current.InputFilePath : DialogHelper.ShowSaveRegexJobFileDialog();
 
                     if (!String.IsNullOrEmpty(path))
                     {

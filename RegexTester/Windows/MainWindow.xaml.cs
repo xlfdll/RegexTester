@@ -23,7 +23,7 @@ namespace RegexTester.Windows
 
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            this.DataContext = new RegexState();
+            this.DataContext = new AppState();
         }
 
         private void MainWindow_Closing(object sender, CancelEventArgs e)
@@ -97,7 +97,7 @@ namespace RegexTester.Windows
 
         private void ContentTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            RegexState.Current.Result = new RegexResult();
+            AppState.Current.Result = new RegexResult();
         }
 
         // GridSplitter is a Thumb control, hence DragStarted and DragCompleted events are available

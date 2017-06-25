@@ -20,7 +20,7 @@ namespace RegexTester.Commands
 
                     if (messageBoxResult != MessageBoxResult.Cancel)
                     {
-                        ApplicationHelper.MainWindow.DataContext = new RegexState();
+                        ApplicationHelper.MainWindow.DataContext = new AppState();
                     }
                 }
             );
@@ -47,8 +47,8 @@ namespace RegexTester.Commands
             (
                 delegate
                 {
-                    String path = !String.IsNullOrEmpty(RegexState.Current.InputFilePath) ?
-                       RegexState.Current.InputFilePath : DialogHelper.ShowSaveRegexJobFileDialog();
+                    String path = !String.IsNullOrEmpty(AppState.Current.InputFilePath) ?
+                       AppState.Current.InputFilePath : DialogHelper.ShowSaveRegexJobFileDialog();
 
                     if (!String.IsNullOrEmpty(path))
                     {

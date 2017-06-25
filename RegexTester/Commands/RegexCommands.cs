@@ -24,7 +24,7 @@ namespace RegexTester.Commands
 					(
 						delegate (Object argument)
 						{
-							return RegexHelper.Match(RegexState.Current.Input);
+							return RegexHelper.Match(AppState.Current.Input);
 						},
 						null
 					)
@@ -40,9 +40,9 @@ namespace RegexTester.Commands
 
 						if (regexResult != null)
 						{
-							RegexState.Current.Result = regexResult;
+							AppState.Current.Result = regexResult;
 
-							ApplicationHelper.Settings.History.AddRecentRegexPattern(RegexState.Current.Input.RegexPattern);
+							ApplicationHelper.Settings.History.AddRecentRegexPattern(AppState.Current.Input.RegexPattern);
 						}
 						else
 						{
@@ -65,7 +65,7 @@ namespace RegexTester.Commands
 					(
 						delegate (Object argument)
 						{
-							return RegexHelper.Split(RegexState.Current.Input);
+							return RegexHelper.Split(AppState.Current.Input);
 						},
 						null
 					)
@@ -88,9 +88,9 @@ namespace RegexTester.Commands
 								sb.AppendLine(item);
 							}
 
-							RegexState.Current.Input.Text = sb.ToString();
+							AppState.Current.Input.Text = sb.ToString();
 
-							ApplicationHelper.Settings.History.AddRecentRegexPattern(RegexState.Current.Input.RegexPattern);
+							ApplicationHelper.Settings.History.AddRecentRegexPattern(AppState.Current.Input.RegexPattern);
 						}
 						else
 						{
@@ -113,7 +113,7 @@ namespace RegexTester.Commands
 					(
 						delegate (Object argument)
 						{
-							return RegexHelper.Replace(RegexState.Current.Input);
+							return RegexHelper.Replace(AppState.Current.Input);
 						},
 						null
 					)
@@ -129,10 +129,10 @@ namespace RegexTester.Commands
 
 						if (result != null)
 						{
-							RegexState.Current.Input.Text = result;
+							AppState.Current.Input.Text = result;
 
-							ApplicationHelper.Settings.History.AddRecentRegexPattern(RegexState.Current.Input.RegexPattern);
-							ApplicationHelper.Settings.History.AddRecentReplacePattern(RegexState.Current.Input.ReplacePattern);
+							ApplicationHelper.Settings.History.AddRecentRegexPattern(AppState.Current.Input.RegexPattern);
+							ApplicationHelper.Settings.History.AddRecentReplacePattern(AppState.Current.Input.ReplacePattern);
 						}
 						else
 						{
@@ -155,7 +155,7 @@ namespace RegexTester.Commands
 					(
 						delegate (Object argument)
 						{
-							return RegexHelper.Measure(RegexState.Current.Input);
+							return RegexHelper.Measure(AppState.Current.Input);
 						},
 						null
 					)
@@ -210,6 +210,6 @@ namespace RegexTester.Commands
 		public static RelayCommand<String> EditCommand { get; }
 
 		private static Boolean CanRegexCommandExecute
-			=> RegexState.Current != null && !String.IsNullOrEmpty(RegexState.Current.Input.RegexPattern);
+			=> AppState.Current != null && !String.IsNullOrEmpty(AppState.Current.Input.RegexPattern);
 	}
 }
