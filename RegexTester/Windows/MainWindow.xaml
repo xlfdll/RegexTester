@@ -236,11 +236,6 @@
             <TreeView x:Name="ResultTreeView" ItemsSource="{Binding Path=Result.Results}" MinHeight="150"
                       SelectedItemChanged="ResultTreeView_SelectedItemChanged">
                 <TreeView.Resources>
-                    <HierarchicalDataTemplate DataType="{x:Type data:RegexResult}" ItemsSource="{Binding Path=Results}">
-                        <TextBlock>
-                            <TextBlock Text="{Binding Path=Value}"/> at index <TextBlock Text="{Binding Path=Index}"/> (<TextBlock Text="{Binding Path=Children.Count}"/>)
-                        </TextBlock>
-                    </HierarchicalDataTemplate>
                     <HierarchicalDataTemplate DataType="{x:Type data:RegexMatch}" ItemsSource="{Binding Path=Children}">
                         <TextBlock>
                             <TextBlock Text="{Binding Path=Value}"/> at index <TextBlock Text="{Binding Path=Index}"/> (<TextBlock Text="{Binding Path=Children.Count}"/>)
