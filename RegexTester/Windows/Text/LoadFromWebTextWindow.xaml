@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:RegexTester.Windows.Text"
         mc:Ignorable="d"
         Title="Load Text from Web" Icon="pack://application:,,,/RegexTester.ico"
+        FocusManager.FocusedElement="{Binding ElementName=URLTextBox}"
         ShowInTaskbar="False" ResizeMode="NoResize"
         Width="500" SizeToContent="Height" WindowStartupLocation="CenterOwner"
         Loaded="LoadFromWebTextWindow_Loaded">
@@ -16,6 +17,7 @@
                 <Setter Property="VerticalAlignment" Value="Center"/>
             </Style>
             <Style TargetType="TextBox">
+                <Setter Property="VerticalContentAlignment" Value="Center"/>
                 <Setter Property="Margin" Value="3"/>
                 <Setter Property="Height" Value="25"/>
             </Style>
