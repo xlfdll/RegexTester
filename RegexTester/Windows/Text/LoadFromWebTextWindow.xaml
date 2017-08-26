@@ -42,7 +42,7 @@
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <TextBlock>
-                        <TextBlock Text="{Binding Path=CodePage}"/> - <TextBlock Text="{Binding Path=DisplayName}"/>
+                        <TextBlock Text="{Binding Path=CodePage}"/> - <TextBlock Text="{Binding Path=DisplayName}"/> [<TextBlock Text="{Binding Path=Name}"/>]
                     </TextBlock>
                 </DataTemplate>
             </ComboBox.ItemTemplate>
