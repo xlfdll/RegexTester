@@ -65,6 +65,32 @@
                 </StackPanel>
             </Button>
             <Separator/>
+            <Button ContextMenuService.IsEnabled="False" Click="LoadTextButton_Click">
+                <Button.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Header="From _Document..."
+                                  Command="{x:Static command:TextCommands.LoadTextCommand}"
+                                  CommandParameter="Document">
+                            <MenuItem.Icon>
+                                <Image Source="{StaticResource DocumentIcon}"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem Header="From _Web..."
+                                  Command="{x:Static command:TextCommands.LoadTextCommand}"
+                                  CommandParameter="Web">
+                            <MenuItem.Icon>
+                                <Image Source="{StaticResource WebIcon}"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                    </ContextMenu>
+                </Button.ContextMenu>
+
+                <StackPanel>
+                    <Image Source="{StaticResource LoadTextIcon}"/>
+                    <AccessText Text="Load _Text >"/>
+                </StackPanel>
+            </Button>
+            <Separator/>
             <Button Command="{x:Static command:RegexCommands.MatchCommand}">
                 <StackPanel>
                     <Image Source="{StaticResource MatchIcon}"/>
@@ -94,7 +120,7 @@
             <Button Command="{x:Static command:GeneralCommands.AboutCommand}">
                 <StackPanel>
                     <Image Source="{StaticResource AboutIcon}"/>
-                    <AccessText Text="_About"/>
+                    <AccessText Text="About"/>
                 </StackPanel>
             </Button>
             <Separator/>

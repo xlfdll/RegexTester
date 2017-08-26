@@ -71,6 +71,9 @@
     <Compile Include="..\..\XDLibrary\Xlfdll.Core\Configuration\IConfigurationProcessor.cs">
       <Link>Base\Configuration\IConfigurationProcessor.cs</Link>
     </Compile>
+    <Compile Include="..\..\XDLibrary\Xlfdll.Core\Infrastructure\EnumerableExtension.cs">
+      <Link>Base\EnumerableExtension.cs</Link>
+    </Compile>
     <Compile Include="..\..\XDLibrary\Xlfdll.Windows.Presentation\ApplicationPackUri.cs">
       <Link>Base\Windows\Presentation\ApplicationPackUri.cs</Link>
     </Compile>
@@ -81,18 +84,28 @@
     <Compile Include="..\..\XDLibrary\Xlfdll.Windows.Presentation\Dialogs\ExceptionMessageBox.cs">
       <Link>Base\Windows\Presentation\Dialogs\ExceptionMessageBox.cs</Link>
     </Compile>
+    <Compile Include="..\..\XDLibrary\Xlfdll.Windows.Presentation\Functions\ControlFunctions.cs">
+      <Link>Base\Windows\Presentation\Functions\ControlFunctions.cs</Link>
+    </Compile>
     <Compile Include="..\..\XDLibrary\Xlfdll.Windows.Presentation\Functions\WindowFunctions.cs">
       <Link>Base\Windows\Presentation\Functions\WindowFunctions.cs</Link>
     </Compile>
     <Compile Include="..\..\XDLibrary\Xlfdll.Windows.Presentation\RelayCommand.cs">
       <Link>Base\Windows\Presentation\RelayCommand.cs</Link>
     </Compile>
+    <Compile Include="Commands\TextCommands.cs" />
     <Compile Include="Commands\ResultCommands.cs" />
     <Compile Include="Configuration\Settings.cs" />
     <Compile Include="Helpers\RegexHelper.cs" />
     <Compile Include="Helpers\ValueHelper.cs" />
     <Compile Include="Windows\TaskWindow.xaml.cs">
       <DependentUpon>TaskWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Text\LoadFromWebTextWindow.xaml.cs">
+      <DependentUpon>LoadFromWebTextWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Text\LoadFromDocumentTextWindow.xaml.cs">
+      <DependentUpon>LoadFromDocumentTextWindow.xaml</DependentUpon>
     </Compile>
     <Page Include="..\..\XDLibrary\Xlfdll.Windows.Presentation\Dialogs\AboutWindow.xaml">
       <Link>Base\Windows\Presentation\Dialogs\AboutWindow.xaml</Link>
@@ -175,6 +188,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\TaskWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Text\LoadFromWebTextWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Text\LoadFromDocumentTextWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
