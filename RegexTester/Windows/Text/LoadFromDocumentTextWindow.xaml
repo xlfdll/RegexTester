@@ -54,7 +54,17 @@
 
         <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3"
                     Orientation="Horizontal" HorizontalAlignment="Right">
-            <Button Content="_Load" IsDefault="True" Click="LoadButton_Click"/>
+            <Button Content="_Load" IsDefault="True" Click="LoadButton_Click">
+                <Button.Resources>
+                    <Style TargetType="Button" BasedOn="{StaticResource ModernCommonButtonStyle}">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Path=Text, ElementName=FileNameTextBox}" Value="">
+                                <Setter Property="IsEnabled" Value="False"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Resources>
+            </Button>
             <Button Content="_Cancel" IsCancel="True"/>
         </StackPanel>
     </Grid>
