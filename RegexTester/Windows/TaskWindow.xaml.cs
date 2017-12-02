@@ -25,7 +25,7 @@ namespace RegexTester.Windows
 
         private void TaskWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            WindowFunctions.DisableControlBox(this);
+            this.DisableControlBox();
 
             this.TaskStateTimer = new DispatcherTimer()
             {

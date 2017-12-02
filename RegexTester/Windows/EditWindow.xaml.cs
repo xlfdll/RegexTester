@@ -7,28 +7,28 @@ using RegexTester.Data;
 
 namespace RegexTester.Windows
 {
-    /// <summary>
-    /// EditWindow.xaml の相互作用ロジック
-    /// </summary>
-    public partial class EditWindow : Window
-    {
-        public EditWindow()
-        {
-            InitializeComponent();
-        }
+	/// <summary>
+	/// EditWindow.xaml の相互作用ロジック
+	/// </summary>
+	public partial class EditWindow : Window
+	{
+		public EditWindow()
+		{
+			InitializeComponent();
+		}
 
-        private void EditWindow_Loaded(object sender, RoutedEventArgs e)
-        {
-            WindowFunctions.DisableMinimizeBox(this);
+		private void EditWindow_Loaded(object sender, RoutedEventArgs e)
+		{
+			this.DisableMinimizeBox();
 
-            PatternTextBox.DataContext = AppState.Current.Input;
-        }
+			PatternTextBox.DataContext = AppState.Current.Input;
+		}
 
-        private void OKButton_Click(object sender, RoutedEventArgs e)
-        {
-            PatternTextBox.GetBindingExpression(TextBox.TextProperty).UpdateSource();
+		private void OKButton_Click(object sender, RoutedEventArgs e)
+		{
+			PatternTextBox.GetBindingExpression(TextBox.TextProperty).UpdateSource();
 
-            this.Close();
-        }
-    }
+			this.Close();
+		}
+	}
 }

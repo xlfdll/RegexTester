@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>RegexTester</RootNamespace>
     <AssemblyName>RegexTester</AssemblyName>
-    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
@@ -71,8 +71,8 @@
     <Compile Include="..\..\XDLibrary\Xlfdll.Core\Configuration\IConfigurationProcessor.cs">
       <Link>Base\Configuration\IConfigurationProcessor.cs</Link>
     </Compile>
-    <Compile Include="..\..\XDLibrary\Xlfdll.Core\Infrastructure\EnumerableExtension.cs">
-      <Link>Base\EnumerableExtension.cs</Link>
+    <Compile Include="..\..\XDLibrary\Xlfdll.Core\Infrastructure\Collections\EnumerableExtensions.cs">
+      <Link>Base\EnumerableExtensions.cs</Link>
     </Compile>
     <Compile Include="..\..\XDLibrary\Xlfdll.Windows.Presentation\ApplicationPackUri.cs">
       <Link>Base\Windows\Presentation\ApplicationPackUri.cs</Link>
@@ -84,11 +84,11 @@
     <Compile Include="..\..\XDLibrary\Xlfdll.Windows.Presentation\Dialogs\ExceptionMessageBox.cs">
       <Link>Base\Windows\Presentation\Dialogs\ExceptionMessageBox.cs</Link>
     </Compile>
-    <Compile Include="..\..\XDLibrary\Xlfdll.Windows.Presentation\Functions\ControlFunctions.cs">
-      <Link>Base\Windows\Presentation\Functions\ControlFunctions.cs</Link>
+    <Compile Include="..\..\XDLibrary\Xlfdll.Windows.Presentation\Functions\ControlExtensions.cs">
+      <Link>Base\Windows\Presentation\Functions\ControlExtensions.cs</Link>
     </Compile>
-    <Compile Include="..\..\XDLibrary\Xlfdll.Windows.Presentation\Functions\WindowFunctions.cs">
-      <Link>Base\Windows\Presentation\Functions\WindowFunctions.cs</Link>
+    <Compile Include="..\..\XDLibrary\Xlfdll.Windows.Presentation\Functions\WindowExtensions.cs">
+      <Link>Base\Windows\Presentation\Functions\WindowExtensions.cs</Link>
     </Compile>
     <Compile Include="..\..\XDLibrary\Xlfdll.Windows.Presentation\RelayCommand.cs">
       <Link>Base\Windows\Presentation\RelayCommand.cs</Link>
