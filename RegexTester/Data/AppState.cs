@@ -27,13 +27,13 @@ namespace RegexTester.Data
 
 		public RegexInput Input
 		{
-			get => _input;
-			set => this.SetField(ref _input, value);
+			get { return _input; }
+			set { this.SetField(ref _input, value); }
 		}
 		public RegexResult Result
 		{
-			get => _result;
-			set => this.SetField(ref _result, value);
+			get { return _result; }
+			set { this.SetField(ref _result, value); }
 		}
 
 		#endregion
