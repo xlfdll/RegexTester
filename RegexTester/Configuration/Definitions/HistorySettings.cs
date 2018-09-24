@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-using Xlfdll.Core;
+using Xlfdll.Configuration;
 
 namespace RegexTester.Configuration
 {

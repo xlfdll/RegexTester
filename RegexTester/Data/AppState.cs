@@ -2,75 +2,75 @@
 using System.Collections.Generic;
 using System.IO;
 
-using Xlfdll.Core;
+using Xlfdll;
 
 using RegexTester.Helpers;
 
 namespace RegexTester.Data
 {
-	public class AppState : ObservableObject
-	{
-		public AppState()
-		{
-			this.Input = new RegexInput();
-			this.Result = new RegexResult();
+    public class AppState : ObservableObject
+    {
+        public AppState()
+        {
+            this.Input = new RegexInput();
+            this.Result = new RegexResult();
 
-			this.Update(String.Empty);
+            this.Update(String.Empty);
 
-			AppState.Current = this;
-		}
+            AppState.Current = this;
+        }
 
-		#region Main Data
+        #region Main Data
 
-		private RegexInput _input;
-		private RegexResult _result;
+        private RegexInput _input;
+        private RegexResult _result;
 
-		public RegexInput Input
-		{
-			get { return _input; }
-			set { this.SetField(ref _input, value); }
-		}
-		public RegexResult Result
-		{
-			get { return _result; }
-			set { this.SetField(ref _result, value); }
-		}
+        public RegexInput Input
+        {
+            get { return _input; }
+            set { this.SetField(ref _input, value); }
+        }
+        public RegexResult Result
+        {
+            get { return _result; }
+            set { this.SetField(ref _result, value); }
+        }
 
-		#endregion
+        #endregion
 
-		#region History Data
+        #region History Data
 
-		public IReadOnlyCollection<String> RecentRegexPatterns
-			=> ApplicationHelper.Settings.History.RecentRegexPatterns;
-		public IReadOnlyCollection<String> RecentReplacePatterns
-			=> ApplicationHelper.Settings.History.RecentReplacePatterns;
+        public IReadOnlyCollection<String> RecentRegexPatterns
+            => ApplicationHelper.Settings.History.RecentRegexPatterns;
+        public IReadOnlyCollection<String> RecentReplacePatterns
+            => ApplicationHelper.Settings.History.RecentReplacePatterns;
 
-		#endregion
+        #endregion
 
-		#region Status Data
+        #region Status Data
 
-		public Boolean IsInputModified
-			=> !(_input.RegexPattern.Equals(originalInput.RegexPattern)
-			&& _input.ReplacePattern.Equals(originalInput.ReplacePattern)
-			&& _input.Text.Equals(originalInput.Text)
-			&& _input.Options.Equals(originalInput.Options));
-		public String InputFilePath => inputFilePath;
+        public Boolean IsInputModified
+            => !(_input.RegexPattern.Equals(originalInput.RegexPattern)
+            && _input.ReplacePattern.Equals(originalInput.ReplacePattern)
+            && _input.Text.Equals(originalInput.Text)
+            && _input.Options.Equals(originalInput.Options));
+        public String InputFilePath => inputFilePath;
 
-		private RegexInput originalInput;
-		private String inputFilePath;
+        private RegexInput originalInput;
+        private String inputFilePath;
 
-		public void Update(String path)
-		{
-			originalInput = _input.Clone();
-			inputFilePath = path;
+        public void Update(String path)
+        {
+            originalInput = _input.Clone();
+            inputFilePath = path;
 
-			ApplicationHelper.MainWindow.Title =
-				(!String.IsNullOrEmpty(path) ? Path.GetFileNameWithoutExtension(path) + " - " : String.Empty)
-				+ ApplicationHelper.Metadata.AssemblyTitle;
-		}
+            ApplicationHelper.MainWindow.Title =
+                (!String.IsNullOrEmpty(path) ? Path.GetFileNameWithoutExtension(path) + " - " : String.Empty)
+                + ApplicationHelper.Metadata.AssemblyTitle;
+        }
 
-		#endregion
+        #endregion
 
-		public static AppState Current { get; private set; }
-	}
+        public static AppState Current { get; private set; }
+    }
 }

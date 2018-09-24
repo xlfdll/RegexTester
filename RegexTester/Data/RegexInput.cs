@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text.RegularExpressions;
 
-using Xlfdll.Core;
+using Xlfdll;
 
 namespace RegexTester.Data
 {

@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-using Xlfdll.Core;
+using Xlfdll.Configuration;
 
 using RegexTester.Helpers;
 

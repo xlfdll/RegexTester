@@ -1,4 +1,4 @@
-﻿using Xlfdll.Core;
+﻿using Xlfdll.Configuration;
 
 using RegexTester.Configuration;
 
