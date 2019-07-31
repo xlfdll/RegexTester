@@ -1,5 +1,5 @@
 # .NET Regular Expression Tester
-A regular expression tester with tree-based result display
+A regular expression tester with tree-based result view
 
 <p align="center">
   <img src="https://github.com/xlfdll/xlfdll.github.io/raw/master/images/projects/RegexTester/RegexTester.png"
