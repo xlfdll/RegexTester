@@ -21,8 +21,10 @@ A regular expression tester with tree-based result view
    * **Split**: To split input text based on specific regular expression
    * **Replace**: To perform replacement based on specific regular expression and replacement expression
    * **Measure**: To measure regular expression search performance
+   
    <img src="https://github.com/xlfdll/xlfdll.github.io/raw/master/images/projects/RegexTester/RegexTester-Measure.png"
         alt=".NET Regular Expression Tester - Time Measurement" width="384">
+   
 5. Expand and check results in Result pane
 6. Use job operations (**Save Job [As]**, **Open Job**, etc.) to save current working state for further reuse
 
