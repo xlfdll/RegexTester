@@ -24,7 +24,7 @@ A regular expression tester with tree-based result view
    
    <p align="center">
        <img src="https://github.com/xlfdll/xlfdll.github.io/raw/master/images/projects/RegexTester/RegexTester-Measure.png"
-            alt=".NET Regular Expression Tester - Time Measurement" width="384">
+            alt=".NET Regular Expression Tester - Time Measurement">
    </p>
    
 5. Expand and check results in Result pane
