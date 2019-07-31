@@ -62,6 +62,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="..\BuildInfo.cs">
+      <Link>BuildInfo.cs</Link>
+    </Compile>
     <Compile Include="..\XDLibrary\Xlfdll.Core\Configuration\ApplicationConfiguration.cs">
       <Link>Base\Configuration\ApplicationConfiguration.cs</Link>
     </Compile>
