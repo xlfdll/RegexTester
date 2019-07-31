@@ -2,7 +2,7 @@
 A regular expression tester with tree-based result view
 
 <p align="center">
-  <img src="https://github.com/xlfdll/xlfdll.github.io/raw/master/images/projects/RegexTester/RegexTester.png"
+  <img src="https://github.com/xlfdll/xlfdll.github.io/raw/master/images/projects/RegexTester/RegexTester-Main.png"
        alt=".NET Regular Expression Tester - Main Window" width="384">
   <img src="https://github.com/xlfdll/xlfdll.github.io/raw/master/images/projects/RegexTester/RegexTester-Measure.png"
        alt=".NET Regular Expression Tester - Time Measurement" width="384">
