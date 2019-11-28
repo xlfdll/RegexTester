@@ -6,7 +6,7 @@ using RegexTester.Data;
 
 namespace RegexTester.Helpers
 {
-	public static class FileHelper
+    public static class FileHelper
     {
         public static RegexInput LoadRegexInput(String path)
         {
@@ -48,6 +48,6 @@ namespace RegexTester.Helpers
             }
         }
 
-        public static readonly String Namespace = "http://www.xlfdll.org/xmlns/RegexTester";
+        public const String Namespace = "http://www.xlfdll.org/xmlns/RegexTester";
     }
 }
