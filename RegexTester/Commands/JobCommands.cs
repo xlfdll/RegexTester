@@ -20,7 +20,7 @@ namespace RegexTester.Commands
 
                     if (messageBoxResult != MessageBoxResult.Cancel)
                     {
-                        ApplicationHelper.MainWindow.DataContext = new AppState();
+                        App.MainWindow.DataContext = new AppState();
                     }
                 }
             );

@@ -4,8 +4,6 @@ using System.IO;
 
 using Xlfdll;
 
-using RegexTester.Helpers;
-
 namespace RegexTester.Data
 {
     public class AppState : ObservableObject
@@ -41,9 +39,9 @@ namespace RegexTester.Data
         #region History Data
 
         public IReadOnlyCollection<String> RecentRegexPatterns
-            => ApplicationHelper.Settings.History.RecentRegexPatterns;
+            => App.Settings.History.RecentRegexPatterns;
         public IReadOnlyCollection<String> RecentReplacePatterns
-            => ApplicationHelper.Settings.History.RecentReplacePatterns;
+            => App.Settings.History.RecentReplacePatterns;
 
         #endregion
 
@@ -64,9 +62,9 @@ namespace RegexTester.Data
             originalInput = _input.Clone();
             inputFilePath = path;
 
-            ApplicationHelper.MainWindow.Title =
+            App.MainWindow.Title =
                 (!String.IsNullOrEmpty(path) ? Path.GetFileNameWithoutExtension(path) + " - " : String.Empty)
-                + ApplicationHelper.Metadata.AssemblyTitle;
+                + App.Metadata.AssemblyTitle;
         }
 
         #endregion

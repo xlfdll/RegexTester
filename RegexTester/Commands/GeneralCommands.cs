@@ -3,8 +3,6 @@
 using Xlfdll.Windows.Presentation;
 using Xlfdll.Windows.Presentation.Dialogs;
 
-using RegexTester.Helpers;
-
 namespace RegexTester.Commands
 {
     public static class GeneralCommands
@@ -16,8 +14,7 @@ namespace RegexTester.Commands
                 delegate
                 {
                     AboutWindow aboutWindow = new AboutWindow
-                    (ApplicationHelper.MainWindow,
-                    ApplicationHelper.Metadata,
+                    (App.MainWindow, App.Metadata,
                     new ApplicationPackUri("/Images/RegexTester.png"));
 
                     aboutWindow.ShowDialog();

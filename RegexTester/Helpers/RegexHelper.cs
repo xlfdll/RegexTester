@@ -10,7 +10,7 @@ namespace RegexTester.Helpers
     {
         public static RegexResult Match(RegexInput input)
         {
-            Regex regex = new Regex(input.RegexPattern, input.Options, ApplicationHelper.Settings.Main.RegexOperationTimeout);
+            Regex regex = new Regex(input.RegexPattern, input.Options, App.Settings.Main.RegexOperationTimeout);
             Stopwatch stopWatch = new Stopwatch();
             MatchCollection matchCollection = null;
 
@@ -54,21 +54,21 @@ namespace RegexTester.Helpers
 
         public static String[] Split(RegexInput input)
         {
-            Regex regex = new Regex(input.RegexPattern, input.Options, ApplicationHelper.Settings.Main.RegexOperationTimeout);
+            Regex regex = new Regex(input.RegexPattern, input.Options, App.Settings.Main.RegexOperationTimeout);
 
             return regex.Split(input.Text);
         }
 
         public static String Replace(RegexInput input)
         {
-            Regex regex = new Regex(input.RegexPattern, input.Options, ApplicationHelper.Settings.Main.RegexOperationTimeout);
+            Regex regex = new Regex(input.RegexPattern, input.Options, App.Settings.Main.RegexOperationTimeout);
 
             return regex.Replace(input.Text, input.ReplacePattern);
         }
 
         public static Int64 Measure(RegexInput input)
         {
-            Regex regex = new Regex(input.RegexPattern, input.Options, ApplicationHelper.Settings.Main.RegexOperationTimeout);
+            Regex regex = new Regex(input.RegexPattern, input.Options, App.Settings.Main.RegexOperationTimeout);
             Stopwatch stopWatch = new Stopwatch();
 
             try

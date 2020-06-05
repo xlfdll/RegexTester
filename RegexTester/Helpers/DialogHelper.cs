@@ -21,7 +21,7 @@ namespace RegexTester.Helpers
                 Filter = "Regex Job (*.xml)|*.xml|All Files(*.*)|*.*"
             };
 
-            if (openFileDialog.ShowDialog(ApplicationHelper.MainWindow) == true)
+            if (openFileDialog.ShowDialog(App.MainWindow) == true)
             {
                 path = openFileDialog.FileName;
             }
@@ -38,7 +38,7 @@ namespace RegexTester.Helpers
                 Filter = "Regex Job (*.xml)|*.xml|All Files(*.*)|*.*"
             };
 
-            if (saveFileDialog.ShowDialog(ApplicationHelper.MainWindow) == true)
+            if (saveFileDialog.ShowDialog(App.MainWindow) == true)
             {
                 path = saveFileDialog.FileName;
             }
@@ -52,9 +52,9 @@ namespace RegexTester.Helpers
 
             if (AppState.Current.IsInputModified)
             {
-                messageBoxResult = MessageBox.Show(ApplicationHelper.MainWindow, String.Format("Do you want to save current input changes to {0}?",
+                messageBoxResult = MessageBox.Show(App.MainWindow, String.Format("Do you want to save current input changes to {0}?",
                     (!String.IsNullOrEmpty(AppState.Current.InputFilePath) ? Path.GetFileName(AppState.Current.InputFilePath) : "New Regex Job")),
-                    ApplicationHelper.Metadata.AssemblyTitle, MessageBoxButton.YesNoCancel, MessageBoxImage.Question);
+                    App.Metadata.AssemblyTitle, MessageBoxButton.YesNoCancel, MessageBoxImage.Question);
 
                 if (messageBoxResult == MessageBoxResult.Yes)
                 {
@@ -98,7 +98,7 @@ namespace RegexTester.Helpers
                 sb.AppendLine("Based on System Timer");
             }
 
-            MessageBox.Show(ApplicationHelper.MainWindow, sb.ToString(), ApplicationHelper.Metadata.AssemblyTitle,
+            MessageBox.Show(App.MainWindow, sb.ToString(), App.Metadata.AssemblyTitle,
                 MessageBoxButton.OK, MessageBoxImage.Information);
         }
     }
