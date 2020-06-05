@@ -6,7 +6,7 @@
         Width="600" SizeToContent="Height" WindowStartupLocation="CenterOwner"
         Loaded="TaskWindow_Loaded">
 
-    <StackPanel>
+    <StackPanel Margin="3">
         <StackPanel.Resources>
             <Style TargetType="ProgressBar">
                 <Setter Property="Margin" Value="10"/>

@@ -26,8 +26,6 @@
             <RowDefinition Height="40"/>
             <RowDefinition/>
             <RowDefinition Height="Auto"/>
-            <RowDefinition x:Name="ResultRowDefinition" Height="Auto"/>
-            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
         <ToolBar Grid.Row="0" ToolBarTray.IsLocked="True">
@@ -126,160 +124,168 @@
             <Separator/>
         </ToolBar>
 
-        <Grid x:Name="InputGrid" Grid.Row="1">
-            <Grid.Resources>
-                <Style TargetType="Button" BasedOn="{StaticResource ModernButtonStyle}"/>
-            </Grid.Resources>
+        <Grid Grid.Row="1" Margin="3">
             <Grid.RowDefinitions>
-                <RowDefinition Height="48"/>
-                <RowDefinition Height="48"/>
                 <RowDefinition/>
                 <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
+                <RowDefinition x:Name="ResultRowDefinition" Height="Auto"/>
             </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition Width="Auto"/>
-            </Grid.ColumnDefinitions>
 
-            <GroupBox Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Header="Regular Expression">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition/>
-                        <ColumnDefinition Width="32"/>
-                    </Grid.ColumnDefinitions>
+            <Grid x:Name="InputGrid" Grid.Row="0">
+                <Grid.Resources>
+                    <Style TargetType="Button" BasedOn="{StaticResource ModernButtonStyle}"/>
+                </Grid.Resources>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="48"/>
+                    <RowDefinition Height="48"/>
+                    <RowDefinition/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
 
-                    <ComboBox x:Name="RegexPatternComboBox" Grid.Column="0" IsEditable="True"
+                <GroupBox Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Header="Regular Expression">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="32"/>
+                        </Grid.ColumnDefinitions>
+
+                        <ComboBox x:Name="RegexPatternComboBox" Grid.Column="0" IsEditable="True"
                               Text="{Binding Path=Input.RegexPattern}" ItemsSource="{Binding Path=RecentRegexPatterns}"
                               DropDownOpened="PatternComboBox_DropDownOpened">
-                        <ComboBox.InputBindings>
-                            <KeyBinding Command="{x:Static command:RegexCommands.MatchCommand}"
+                            <ComboBox.InputBindings>
+                                <KeyBinding Command="{x:Static command:RegexCommands.MatchCommand}"
                                         Key="Enter"/>
-                            <KeyBinding Command="{x:Static command:RegexCommands.EditCommand}"
+                                <KeyBinding Command="{x:Static command:RegexCommands.EditCommand}"
                                         CommandParameter="{Binding Path=Input.RegexPattern}"
                                         Key="F2"/>
-                        </ComboBox.InputBindings>
-                    </ComboBox>
-                    <Button Grid.Column="1" Background="White"
+                            </ComboBox.InputBindings>
+                        </ComboBox>
+                        <Button Grid.Column="1" Background="White"
                             Command="{x:Static command:RegexCommands.EditCommand}"
                             CommandParameter="RegexPattern">
-                        <Image Source="{StaticResource EditIcon}"/>
-                    </Button>
-                </Grid>
-            </GroupBox>
-            <GroupBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Header="Replacement Expression">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition/>
-                        <ColumnDefinition Width="32"/>
-                    </Grid.ColumnDefinitions>
+                            <Image Source="{StaticResource EditIcon}"/>
+                        </Button>
+                    </Grid>
+                </GroupBox>
+                <GroupBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Header="Replacement Expression">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="32"/>
+                        </Grid.ColumnDefinitions>
 
-                    <ComboBox x:Name="ReplacePatternComboBox" Grid.Column="0" IsEditable="True"
+                        <ComboBox x:Name="ReplacePatternComboBox" Grid.Column="0" IsEditable="True"
                               Text="{Binding Path=Input.ReplacePattern}" ItemsSource="{Binding Path=RecentReplacePatterns}"
                               DropDownOpened="PatternComboBox_DropDownOpened">
-                        <ComboBox.InputBindings>
-                            <KeyBinding Command="{x:Static command:RegexCommands.ReplaceCommand}"
+                            <ComboBox.InputBindings>
+                                <KeyBinding Command="{x:Static command:RegexCommands.ReplaceCommand}"
                                         Key="Enter"/>
-                            <KeyBinding Command="{x:Static command:RegexCommands.EditCommand}"
+                                <KeyBinding Command="{x:Static command:RegexCommands.EditCommand}"
                                         CommandParameter="{Binding Path=Input.ReplacePattern}"
                                         Key="F2"/>
-                        </ComboBox.InputBindings>
-                    </ComboBox>
-                    <Button Grid.Column="1" Background="White"
+                            </ComboBox.InputBindings>
+                        </ComboBox>
+                        <Button Grid.Column="1" Background="White"
                             Command="{x:Static command:RegexCommands.EditCommand}"
                             CommandParameter="ReplacePattern">
-                        <Image Source="{StaticResource EditIcon}"/>
-                    </Button>
-                </Grid>
-            </GroupBox>
-            <GroupBox Grid.Row="2" Grid.Column="0" Header="Text">
-                <TextBox x:Name="ContentTextBox" AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto"
+                            <Image Source="{StaticResource EditIcon}"/>
+                        </Button>
+                    </Grid>
+                </GroupBox>
+                <GroupBox Grid.Row="2" Grid.Column="0" Header="Text">
+                    <TextBox x:Name="ContentTextBox" AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto"
                          PreviewDragOver="MainWindow_PreviewDragOver" PreviewDrop="ContentTextBox_PreviewDrop"
                          Text="{Binding Path=Input.Text, UpdateSourceTrigger=PropertyChanged}" TextChanged="ContentTextBox_TextChanged"
                          SelectionChanged="ContentTextBox_SelectionChanged"/>
-            </GroupBox>
-            <Expander Grid.Row="2" Grid.Column="2" ExpandDirection="Right" IsExpanded="True">
-                <Expander.Style>
-                    <Style TargetType="Expander">
+                </GroupBox>
+                <Expander Grid.Row="2" Grid.Column="2" ExpandDirection="Right" IsExpanded="True">
+                    <Expander.Style>
+                        <Style TargetType="Expander">
+                            <Style.Triggers>
+                                <Trigger Property="IsExpanded" Value="False">
+                                    <Setter Property="Header">
+                                        <Setter.Value>
+                                            <!-- Header content need to be in Style, or Trigger cannot be activated -->
+                                            <TextBlock Text="RegexOptions">
+                                                <TextBlock.LayoutTransform>
+                                                    <RotateTransform Angle="90"/>
+                                                </TextBlock.LayoutTransform>
+                                            </TextBlock>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Expander.Style>
+
+                    <GroupBox Header="RegexOptions">
+                        <ListBox DataContext="{Binding Path=Input}">
+                            <CheckBox Content="Compiled"
+                                  IsChecked="{Binding Path=Options, Converter={converter:RegexOptionsConverter}, ConverterParameter=Compiled}"/>
+                            <CheckBox Content="IgnoreCase"
+                                  IsChecked="{Binding Path=Options, Converter={converter:RegexOptionsConverter}, ConverterParameter=IgnoreCase}"/>
+                            <CheckBox Content="Multiline"
+                                  IsChecked="{Binding Path=Options, Converter={converter:RegexOptionsConverter}, ConverterParameter=Multiline}"/>
+                            <CheckBox Content="ExplicitCapture"
+                                  IsChecked="{Binding Path=Options, Converter={converter:RegexOptionsConverter}, ConverterParameter=ExplicitCapture}"/>
+                            <CheckBox Content="Singleline"
+                                  IsChecked="{Binding Path=Options, Converter={converter:RegexOptionsConverter}, ConverterParameter=Singleline}"/>
+                            <CheckBox Content="IgnorePatternWhitespace"
+                                  IsChecked="{Binding Path=Options, Converter={converter:RegexOptionsConverter}, ConverterParameter=IgnorePatternWhitespace}"/>
+                            <CheckBox Content="RightToLeft"
+                                  IsChecked="{Binding Path=Options, Converter={converter:RegexOptionsConverter}, ConverterParameter=RightToLeft}"/>
+                            <CheckBox Content="ECMAScript"
+                                  IsChecked="{Binding Path=Options, Converter={converter:RegexOptionsConverter}, ConverterParameter=ECMAScript}"/>
+                            <CheckBox Content="CultureInvariant"
+                                  IsChecked="{Binding Path=Options, Converter={converter:RegexOptionsConverter}, ConverterParameter=CultureInvariant}"/>
+                        </ListBox>
+                    </GroupBox>
+                </Expander>
+            </Grid>
+
+            <GridSplitter Grid.Row="1" DragCompleted="ResultGridSplitter_DragCompleted"
+                          HorizontalAlignment="Stretch" VerticalAlignment="Center" Height="3">
+                <GridSplitter.Style>
+                    <Style TargetType="GridSplitter">
                         <Style.Triggers>
-                            <Trigger Property="IsExpanded" Value="False">
-                                <Setter Property="Header">
-                                    <Setter.Value>
-                                        <!-- Header content need to be in Style, or Trigger cannot be activated -->
-                                        <TextBlock Text="RegexOptions">
-                                            <TextBlock.LayoutTransform>
-                                                <RotateTransform Angle="90"/>
-                                            </TextBlock.LayoutTransform>
-                                        </TextBlock>
-                                    </Setter.Value>
-                                </Setter>
-                            </Trigger>
+                            <DataTrigger Binding="{Binding Path=IsExpanded, ElementName=ResultExpander}" Value="False">
+                                <Setter Property="Visibility" Value="Collapsed"/>
+                            </DataTrigger>
                         </Style.Triggers>
                     </Style>
-                </Expander.Style>
+                </GridSplitter.Style>
+            </GridSplitter>
 
-                <GroupBox Header="RegexOptions">
-                    <ListBox DataContext="{Binding Path=Input}">
-                        <CheckBox Content="Compiled"
-                                  IsChecked="{Binding Path=Options, Converter={converter:RegexOptionsConverter}, ConverterParameter=Compiled}"/>
-                        <CheckBox Content="IgnoreCase"
-                                  IsChecked="{Binding Path=Options, Converter={converter:RegexOptionsConverter}, ConverterParameter=IgnoreCase}"/>
-                        <CheckBox Content="Multiline"
-                                  IsChecked="{Binding Path=Options, Converter={converter:RegexOptionsConverter}, ConverterParameter=Multiline}"/>
-                        <CheckBox Content="ExplicitCapture"
-                                  IsChecked="{Binding Path=Options, Converter={converter:RegexOptionsConverter}, ConverterParameter=ExplicitCapture}"/>
-                        <CheckBox Content="Singleline"
-                                  IsChecked="{Binding Path=Options, Converter={converter:RegexOptionsConverter}, ConverterParameter=Singleline}"/>
-                        <CheckBox Content="IgnorePatternWhitespace"
-                                  IsChecked="{Binding Path=Options, Converter={converter:RegexOptionsConverter}, ConverterParameter=IgnorePatternWhitespace}"/>
-                        <CheckBox Content="RightToLeft"
-                                  IsChecked="{Binding Path=Options, Converter={converter:RegexOptionsConverter}, ConverterParameter=RightToLeft}"/>
-                        <CheckBox Content="ECMAScript"
-                                  IsChecked="{Binding Path=Options, Converter={converter:RegexOptionsConverter}, ConverterParameter=ECMAScript}"/>
-                        <CheckBox Content="CultureInvariant"
-                                  IsChecked="{Binding Path=Options, Converter={converter:RegexOptionsConverter}, ConverterParameter=CultureInvariant}"/>
-                    </ListBox>
-                </GroupBox>
+            <Expander x:Name="ResultExpander" Grid.Row="2" Header="Result" FocusManager.IsFocusScope="True"
+                  IsExpanded="{Binding Path=Result.IsAvailable, Mode=OneWay}"
+                  Expanded="ResultExpander_Expanded" Collapsed="ResultExpander_Collapsed">
+                <TreeView x:Name="ResultTreeView" ItemsSource="{Binding Path=Result.Results}" MinHeight="150"
+                      SelectedItemChanged="ResultTreeView_SelectedItemChanged">
+                    <TreeView.Resources>
+                        <HierarchicalDataTemplate DataType="{x:Type data:RegexMatch}" ItemsSource="{Binding Path=Children}">
+                            <TextBlock>
+                            <TextBlock Text="{Binding Path=Value}"/> at index <TextBlock Text="{Binding Path=Index}"/> (<TextBlock Text="{Binding Path=Children.Count}"/>)
+                        </TextBlock>
+                        </HierarchicalDataTemplate>
+                    </TreeView.Resources>
+                    <TreeView.ContextMenu>
+                        <!-- ContextMenu has its own Visual Tree. Use PlacementTarget property to work around -->
+                        <ContextMenu DataContext="{Binding Path=PlacementTarget, RelativeSource={RelativeSource Self}}">
+                            <MenuItem Header="_Copy Value"
+                                  Command="{x:Static command:ResultCommands.CopyValueCommand}"
+                                  CommandParameter="{Binding Path=SelectedItem}"/>
+                        </ContextMenu>
+                    </TreeView.ContextMenu>
+                </TreeView>
             </Expander>
         </Grid>
 
-        <GridSplitter Grid.Row="2" DragCompleted="ResultGridSplitter_DragCompleted"
-                          HorizontalAlignment="Stretch" VerticalAlignment="Center" Height="3">
-            <GridSplitter.Style>
-                <Style TargetType="GridSplitter">
-                    <Style.Triggers>
-                        <DataTrigger Binding="{Binding Path=IsExpanded, ElementName=ResultExpander}" Value="False">
-                            <Setter Property="Visibility" Value="Collapsed"/>
-                        </DataTrigger>
-                    </Style.Triggers>
-                </Style>
-            </GridSplitter.Style>
-        </GridSplitter>
-
-        <Expander x:Name="ResultExpander" Grid.Row="3" Header="Result" FocusManager.IsFocusScope="True"
-                  IsExpanded="{Binding Path=Result.IsAvailable, Mode=OneWay}"
-                  Expanded="ResultExpander_Expanded" Collapsed="ResultExpander_Collapsed">
-            <TreeView x:Name="ResultTreeView" ItemsSource="{Binding Path=Result.Results}" MinHeight="150"
-                      SelectedItemChanged="ResultTreeView_SelectedItemChanged">
-                <TreeView.Resources>
-                    <HierarchicalDataTemplate DataType="{x:Type data:RegexMatch}" ItemsSource="{Binding Path=Children}">
-                        <TextBlock>
-                            <TextBlock Text="{Binding Path=Value}"/> at index <TextBlock Text="{Binding Path=Index}"/> (<TextBlock Text="{Binding Path=Children.Count}"/>)
-                        </TextBlock>
-                    </HierarchicalDataTemplate>
-                </TreeView.Resources>
-                <TreeView.ContextMenu>
-                    <!-- ContextMenu has its own Visual Tree. Use PlacementTarget property to work around -->
-                    <ContextMenu DataContext="{Binding Path=PlacementTarget, RelativeSource={RelativeSource Self}}">
-                        <MenuItem Header="_Copy Value"
-                                  Command="{x:Static command:ResultCommands.CopyValueCommand}"
-                                  CommandParameter="{Binding Path=SelectedItem}"/>
-                    </ContextMenu>
-                </TreeView.ContextMenu>
-            </TreeView>
-        </Expander>
-
-        <StatusBar Grid.Row="4" Background="White" DataContext="{Binding Path=Result}">
+        <StatusBar Grid.Row="4" DataContext="{Binding Path=Result}" Style="{StaticResource ModernStatusBarStyle}">
             <StatusBar.Resources>
                 <ResourceDictionary>
                     <ResourceDictionary.MergedDictionaries>

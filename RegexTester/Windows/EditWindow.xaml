@@ -7,13 +7,17 @@
         Width="500" Height="300" MinWidth="250" MinHeight="150" WindowStartupLocation="CenterOwner"
         Loaded="EditWindow_Loaded">
 
+    <Window.Resources>
+        <Style TargetType="Grid">
+            <Setter Property="Margin" Value="3"/>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="Padding" Value="5"/>
+        </Style>
+        <Style TargetType="Button" BasedOn="{StaticResource ModernCommonButtonStyle}"/>
+    </Window.Resources>
+
     <Grid>
-        <Grid.Resources>
-            <Style TargetType="TextBox">
-                <Setter Property="Padding" Value="5"/>
-            </Style>
-            <Style TargetType="Button" BasedOn="{StaticResource ModernCommonButtonStyle}"/>
-        </Grid.Resources>
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition Height="Auto"/>
