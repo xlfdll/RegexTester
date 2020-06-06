@@ -28,15 +28,7 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <ToolBar Grid.Row="0" ToolBarTray.IsLocked="True">
-            <ToolBar.Resources>
-                <ResourceDictionary>
-                    <ResourceDictionary.MergedDictionaries>
-                        <ResourceDictionary Source="pack://application:,,,/Resources/Styles.Toolbar.xaml"/>
-                    </ResourceDictionary.MergedDictionaries>
-                </ResourceDictionary>
-            </ToolBar.Resources>
-
+        <ToolBar Grid.Row="0" ToolBarTray.IsLocked="True" Style="{StaticResource ModernToolBarStyle}">
             <Separator/>
             <Button Command="{x:Static command:JobCommands.NewCommand}">
                 <StackPanel>
@@ -156,7 +148,7 @@
 
                         <ComboBox x:Name="RegexPatternComboBox" Grid.Column="0" IsEditable="True"
                               Text="{Binding Path=Input.RegexPattern}" ItemsSource="{Binding Path=RecentRegexPatterns}"
-                              DropDownOpened="PatternComboBox_DropDownOpened">
+                              DropDownOpened="PatternComboBox_DropDownOpened" Margin="1">
                             <ComboBox.InputBindings>
                                 <KeyBinding Command="{x:Static command:RegexCommands.MatchCommand}"
                                         Key="Enter"/>
@@ -181,7 +173,7 @@
 
                         <ComboBox x:Name="ReplacePatternComboBox" Grid.Column="0" IsEditable="True"
                               Text="{Binding Path=Input.ReplacePattern}" ItemsSource="{Binding Path=RecentReplacePatterns}"
-                              DropDownOpened="PatternComboBox_DropDownOpened">
+                              DropDownOpened="PatternComboBox_DropDownOpened" Margin="1">
                             <ComboBox.InputBindings>
                                 <KeyBinding Command="{x:Static command:RegexCommands.ReplaceCommand}"
                                         Key="Enter"/>
@@ -201,7 +193,7 @@
                     <TextBox x:Name="ContentTextBox" AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto"
                          PreviewDragOver="MainWindow_PreviewDragOver" PreviewDrop="ContentTextBox_PreviewDrop"
                          Text="{Binding Path=Input.Text, UpdateSourceTrigger=PropertyChanged}" TextChanged="ContentTextBox_TextChanged"
-                         SelectionChanged="ContentTextBox_SelectionChanged"/>
+                         SelectionChanged="ContentTextBox_SelectionChanged" Margin="1"/>
                 </GroupBox>
                 <Expander Grid.Row="2" Grid.Column="2" ExpandDirection="Right" IsExpanded="True">
                     <Expander.Style>
@@ -224,7 +216,7 @@
                     </Expander.Style>
 
                     <GroupBox Header="RegexOptions">
-                        <ListBox DataContext="{Binding Path=Input}">
+                        <ListBox DataContext="{Binding Path=Input}" Margin="1">
                             <CheckBox Content="Compiled"
                                   IsChecked="{Binding Path=Options, Converter={converter:RegexOptionsConverter}, ConverterParameter=Compiled}"/>
                             <CheckBox Content="IgnoreCase"
@@ -286,13 +278,6 @@
         </Grid>
 
         <StatusBar Grid.Row="4" DataContext="{Binding Path=Result}" Style="{StaticResource ModernStatusBarStyle}">
-            <StatusBar.Resources>
-                <ResourceDictionary>
-                    <ResourceDictionary.MergedDictionaries>
-                        <ResourceDictionary Source="pack://application:,,,/Resources/Styles.StatusBar.xaml"/>
-                    </ResourceDictionary.MergedDictionaries>
-                </ResourceDictionary>
-            </StatusBar.Resources>
             <StatusBar.ItemsPanel>
                 <ItemsPanelTemplate>
                     <Grid>
