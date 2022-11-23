@@ -12,7 +12,7 @@ using Xlfdll;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Xlfdll Workstation")]
 [assembly: AssemblyProduct(".NET Regular Expression Tester")]
-[assembly: AssemblyCopyright("© 2014 Xlfdll Workstation")]
+[assembly: AssemblyCopyright("© 2009-2014 Xlfdll Workstation")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
